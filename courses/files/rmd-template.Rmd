@@ -1,0 +1,111 @@
+---
+title: "My RMarkdown"
+author: "My Name"
+header-includes:
+  - \usepackage{fancyhdr}
+  - \pagestyle{fancy}
+  - \fancyhead[CO, CE]{My Name}
+  - \usepackage{float}
+geometry: "left=1in,right=1.2in,top=1in,bottom=1in"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(nlme)
+library(car)
+library(MASS)
+library(knitr)
+library(ggplot2)
+```
+
+
+Used to control the output printing.
+```{r, echo=FALSE}
+library(knitr)
+hook_output <- knit_hooks$get("output")
+knit_hooks$set(output = function(x, options) {
+  lines <- options$output.lines
+  if (is.null(lines)) {
+    return(hook_output(x, options))  # pass to default hook
+  }
+  x <- unlist(strsplit(x, "\n"))
+  more <- "..."
+  if (length(lines)==1) {        # first n lines
+    if (length(x) > lines) {
+      # truncate the output, but add ....
+      x <- c(head(x, lines), more)
+    }
+  } else {
+    x <- c(more, x[lines], more)
+  }
+  # paste these lines together
+  x <- paste(c(x, ""), collapse = "\n")
+  hook_output(x, options)
+})
+```
+
+### (i) Sections
+
+Suppress warnings.
+```{r warning=FALSE}
+
+```
+
+Don't evaluate code blocks.
+```{r eval=FALSE}
+
+```
+
+Hide code blocks.
+```{r echo=FALSE}
+
+```
+
+Hide results.
+```{r results='hide'}
+
+```
+
+Hide figures.
+```{r fig.show='hide'}
+
+```
+
+
+Print only part of the output result. To find the number of lines, try using a text editor such as Sublime.
+```{r output.lines = c(6:10, 20:32)}
+
+```
+
+Set figure captions and labels.
+```{r echo = FALSE, fig.cap="Contour plots, upper row shows contour plots for Design = 1, lower row for Design=2.\\label{fig:contour}"}
+
+```
+
+Set figure height and similar properties. 
+```{r fig.height=4}
+
+```
+
+Conclusion of methods.
+
+
+Sample text:
+
+*Considerations for model building*: `block` and `Machine` should be included in the model. Use 
+**cv.glmnet{glmnet}** to choose penalty parameter.
+
+*Residual Diagnostics*: Residual plots are as shown in Figure \ref{fig:residual}.
+
+
+
+\newpage
+
+## Appendices
+### Appendix A: Figures
+```{r, echo = FALSE, fig.width = 4, fig.cap="residual plots\\label{fig:residual}"}
+include_graphics('image-path')
+```
+
+### Appendix B: Tables
