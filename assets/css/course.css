@@ -1,3 +1,15 @@
 div#footer {
     border-top: solid;
 }
+#schedule {
+    padding: 20px
+}
+
+
+table {
+  border-collapse: collapse;
+}
+tr { 
+  border: solid blue;
+  border-width: 1px 0;
+}
