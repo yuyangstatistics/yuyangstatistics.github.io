@@ -9,15 +9,15 @@
 \usepackage{placeins}
 \usepackage{indentfirst}
 \usepackage{enumitem}
-\setlength{\parindent}{2em}
+\setlength{\parindent}{0pt} %% noindent for the entire file % or add indent {2em}
 \usepackage{geometry}
 \geometry{left=1in,right=1in,top=1in,bottom=1in}
 \usepackage[noblocks]{authblk}
 \usepackage{lipsum}%% a garbage package you don't need except to create examples.
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\lhead{My Name}   %% set your name on the head of each page
-\rhead{\thepage}
+\rhead{You Name}  % set your name here
+\lhead{Stat 8051}
 \renewcommand{\headrulewidth}{0.4pt}
 \usepackage[svgnames]{xcolor}
 \usepackage{listings}
@@ -31,6 +31,7 @@
 	keywordstyle=\color{blue},
 	commentstyle=\color{DarkGreen},
 }
+\usepackage{Sweave}
 \graphicspath{{Figures/}}  % set the path of figures
 \usepackage{blindtext}
 \usepackage{scrextend}
@@ -40,7 +41,7 @@
 
 \begin{document}
 
-\title{Homework}
+\title{Homework 0}
 \author{My Name}  %% set your name on the main page
 \date{\vspace{-5ex}}  % suppress the output of date
 \maketitle
@@ -78,6 +79,48 @@ Combing the result of model comparison, the final model ...
 \section{Model Comparison}
 Compare the proposed model \textbf{m1} with candidate models: regression tree, random forest, bagging \cite{faraway2016extending} , ... The optimal lo and gam model are as follows:
 \verbatiminput{outputs/nonparam.txt}
+
+
+
+\subsection*{Problem 1}  %% * means no number
+
+\textbf{(a).}
+\begin{Schunk}
+\begin{Sinput}
+> # library(oehlert)
+>   library(faraway)
+>   library(MASS)
+> # m<-lm(durability ~ brand, data = ex11.3)
+> # boxcox(m)
+> # anova(m)
+> n<-6;g<-5
+> l<-(80.45*qf(0.005,25,4)-1)/n;u<-(80.45*qf(0.995,25,4)-1)/n
+> l;u
+\end{Sinput}
+\begin{Soutput}
+[1] 2.606462
+\end{Soutput}
+\begin{Soutput}
+[1] 268.0322
+\end{Soutput}
+\end{Schunk}
+I don't believe this interval has 99\% coverage because the assumption may not satisfied. Brand 1 is very different form other brands, which means $\alpha_1$ may not follow a normal distriution.\\
+
+\textbf{(b).}
+\begin{Schunk}
+\begin{Soutput}
+[1] 0.7930562
+\end{Soutput}
+\begin{Soutput}
+[1] 0.9912905
+\end{Soutput}
+\end{Schunk}
+
+
+
+
+
+
 
 
 \nocite*{}  
