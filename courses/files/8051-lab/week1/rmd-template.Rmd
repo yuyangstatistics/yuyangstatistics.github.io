@@ -22,6 +22,7 @@ library(ggplot2)
 
 Used to control the output printing.
 ```{r, echo=FALSE}
+## adapted from the post: https://community.rstudio.com/t/showing-only-the-first-few-lines-of-the-results-of-a-code-chunk/6963
 library(knitr)
 hook_output <- knit_hooks$get("output")
 knit_hooks$set(output = function(x, options) {
@@ -105,7 +106,7 @@ Sample text:
 ## Appendices
 ### Appendix A: Figures
 ```{r, echo = FALSE, fig.width = 4, fig.cap="residual plots\\label{fig:residual}"}
-include_graphics('image-path')
+#include_graphics('image-path')
 ```
 
 ### Appendix B: Tables
