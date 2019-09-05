@@ -36,6 +36,7 @@
 \usepackage{blindtext}
 \usepackage{scrextend}
 \addtokomafont{labelinglabel}{\bfseries}
+\usepackage{listings}
 
 	
 
@@ -54,6 +55,7 @@
 
 
 \textbf{\textit{Transformation and Residual Analysis}}: The next step is to check model assumptions and transformation.
+
 
 
 \subsection{Model Summary}
@@ -79,6 +81,20 @@ Combing the result of model comparison, the final model ...
 \section{Model Comparison}
 Compare the proposed model \textbf{m1} with candidate models: regression tree, random forest, bagging \cite{faraway2016extending} , ... The optimal lo and gam model are as follows:
 \verbatiminput{outputs/nonparam.txt}
+
+
+
+You can also insert your code using the following code: 
+
+\begin{lstlisting}[language=R]
+fib <- function(n) {
+if (n < 2)
+n
+else
+fib(n - 1) + fib(n - 2)
+}
+fib(10) # => 55
+\end{lstlisting}
 
 
 

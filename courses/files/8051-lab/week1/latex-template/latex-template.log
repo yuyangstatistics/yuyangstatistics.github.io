@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.9.1)  4 SEP 2019 21:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.9.1)  5 SEP 2019 11:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1232,32 +1232,32 @@ LaTeX Warning: Unused global option(s):
 (./latex-template.aux)
 \openout1 = `latex-template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 42.
-LaTeX Font Info:    Try loading font information for LGR+cmr on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 43.
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 43.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 42.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 43.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    ... okay on input line 43.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1315,26 +1315,26 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count316
-LaTeX Font Info:    Try loading font information for U+msa on input line 62.
+LaTeX Font Info:    Try loading font information for U+msa on input line 64.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 62.
+LaTeX Font Info:    Try loading font information for U+msb on input line 64.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 62.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 64.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Overfull \hbox (16.20804pt too wide) in paragraph at lines 80--81
+Overfull \hbox (16.20804pt too wide) in paragraph at lines 82--83
 []\T1/aer/m/n/10 Compare the pro-posed model \T1/aer/bx/n/10 m1 \T1/aer/m/n/10 
 with can-di-date mod-els: re-gres-sion tree, ran-dom for-est, bag-ging [[]]
  []
 
-LaTeX Font Info:    Try loading font information for T1+aett on input line 81.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 83.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
@@ -1342,38 +1342,38 @@ File: outputs/nonparam.txt  (verbatim)
  [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
  []
 
 (./latex-template.bbl) [2]
-<Figures/resid-m0.png, id=22, 786.94pt x 569.12625pt>
+<Figures/resid-m0.png, id=23, 786.94pt x 569.12625pt>
 File: Figures/resid-m0.png Graphic file (type png)
 <use Figures/resid-m0.png>
-Package pdftex.def Info: Figures/resid-m0.png  used on input line 143.
+Package pdftex.def Info: Figures/resid-m0.png  used on input line 159.
 (pdftex.def)             Requested size: 314.77042pt x 227.64647pt.
-<Figures/boxcox-m0.png, id=24, 786.94pt x 569.12625pt>
+<Figures/boxcox-m0.png, id=25, 786.94pt x 569.12625pt>
 File: Figures/boxcox-m0.png Graphic file (type png)
 <use Figures/boxcox-m0.png>
-Package pdftex.def Info: Figures/boxcox-m0.png  used on input line 149.
+Package pdftex.def Info: Figures/boxcox-m0.png  used on input line 165.
 (pdftex.def)             Requested size: 157.38521pt x 113.82323pt.
-<Figures/scatter1.png, id=25, 795.97375pt x 615.29875pt>
+<Figures/scatter1.png, id=26, 795.97375pt x 615.29875pt>
 File: Figures/scatter1.png Graphic file (type png)
 <use Figures/scatter1.png>
-Package pdftex.def Info: Figures/scatter1.png  used on input line 160.
+Package pdftex.def Info: Figures/scatter1.png  used on input line 176.
 (pdftex.def)             Requested size: 358.18488pt x 276.88187pt.
  [3 <./Figures/resid-m0.png> <./Figures/boxcox-m0.png> <./Figures/scatter1.png>
 ] [4]
 File: outputs/mod-summary.txt  (verbatim)
  [5] (./latex-template.aux) ) 
 Here is how much of TeX's memory you used:
- 20689 strings out of 492616
- 355485 string characters out of 6129482
+ 21644 strings out of 492616
+ 364764 string characters out of 6129482
  665462 words of memory out of 5000000
- 24271 multiletter control sequences out of 15000+600000
- 571222 words of font info for 110 fonts, out of 8000000 for 9000
+ 25223 multiletter control sequences out of 15000+600000
+ 572068 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,63p,469b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,63p,469b,1803s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publ
@@ -1390,11 +1390,12 @@ cmsltt10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-t10.pfb>
-Output written on latex-template.pdf (5 pages, 403444 bytes).
+t10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
+9.pfb>
+Output written on latex-template.pdf (5 pages, 414389 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 95 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
