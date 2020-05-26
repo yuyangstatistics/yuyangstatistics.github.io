@@ -86,8 +86,16 @@ h3 {
 /* Profile
 ------------------------------------------------- */
 header {
-    background: #2F3061;
+    /* background: #2F3061; */
+    background-image: url("../assets/images/skate.jpg");
+    background-size: cover;
+    background-position: center right;
     color: #F7FFF7;
+    padding: 50px;
+}
+
+header p {
+    font-size: larger;
 }
 
 .nav-bar {
@@ -200,7 +208,7 @@ header {
 /* Education
 ------------------------------------------------- */
 .education {
-    background-image: url(../assets/images/joanna-kosinska-unsplash.jpg);
+    background-image: url(../assets/images/sharon-mccutcheon-unsplash.jpg);
     background-size: cover;
     background-position: top right;
     padding-bottom: 100px;
