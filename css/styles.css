@@ -57,9 +57,9 @@ h1, h2 {  /* both h1 and h2*/
 }
 .content-wrap {
     max-width: 850px;
-    width: 85%; /* when the width is smaller than max-width, use width, and 80% means it will take 80% width of the whole page. */
+    width: 95%; /* when the width is smaller than max-width, use width, and 80% means it will take 80% width of the whole page. */
     margin: 0 auto;
-    padding: 60px;
+    padding: 40px 30px;
 }
 
 h3 {
@@ -142,6 +142,7 @@ header p {
     padding: 12px 6px;
     text-decoration: none;
     display: block;
+    border-radius: 5px;
   }
   
   /* Change color of dropdown links on hover */
@@ -210,7 +211,7 @@ header p {
 .education {
     background-image: url(../assets/images/sharon-mccutcheon-unsplash.jpg);
     background-size: cover;
-    background-position: top right;
+    background-position: top left;
     padding-bottom: 100px;
 }
 
@@ -270,6 +271,7 @@ footer {
         font-size: 65px;
         line-height: 0.9;
         margin-bottom: 20px;
+        /* margin-top: 30px; */
     }
 
     h2 {
@@ -281,4 +283,12 @@ footer {
         padding: 5px;
     }
     
+}
+
+@media screen and (max-width: 450px) { /* applies to smart phones */
+    .nav-bar .button {
+        margin-right: 10px;
+        font-size: smaller;
+    }
+
 }
