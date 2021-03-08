@@ -5641,21 +5641,21 @@ check.ci(bnl.arcs, df, x = &quot;G4.D5&quot;, y = &quot;G2.D4&quot;, z = &quot;G
 tlp.arcs &lt;- tlp.fit(df, tau = 0.01)
 tlp.arcs</code></pre>
 <pre><code>    from    to
-1  G2.D4 G3.D1
-2  G2.C3 G3.C1
-3  G2.D1 G3.C2
-4  G2.C4 G3.C2
-5  G2.D2 G3.C3
-6  G2.D3 G3.C3
-7  G2.D4 G3.C3
-8  G2.C3 G4.D1
-9  G2.C5 G4.D1
-10 G2.D4 G4.D1
-11 G3.C2 G4.D1
-12 G2.C1 G4.D2
-13 G2.C6 G4.D2
-14 G2.D4 G4.D3
-15 G2.C1 G4.D5
+1  G2.D1 G3.D1
+2  G2.D4 G3.D1
+3  G2.C3 G3.C1
+4  G2.D1 G3.C2
+5  G2.C4 G3.C2
+6  G2.D2 G3.C2
+7  G2.D2 G3.C3
+8  G2.D3 G3.C3
+9  G2.D4 G3.C3
+10 G2.C3 G4.D1
+11 G2.C5 G4.D1
+12 G3.C2 G4.D1
+13 G2.C1 G4.D2
+14 G2.C1 G4.D5
+15 G1.C1 G4.D6
 16 G2.C2 G5.C1
 17 G2.D2 G5.C1
 18 G2.D3 G5.C1
@@ -5675,17 +5675,17 @@ tlp.arcs</code></pre>
 32 G4.D1 G6.D2</code></pre>
 <pre class="r"><code># plot the network
 plot.network(tlp.arcs, ht = &quot;600px&quot;)</code></pre>
-<div id="htmlwidget-eee8c3d05a772338b1f0" style="width:100%;height:600px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-eee8c3d05a772338b1f0">{"x":{"nodes":{"id":["G2.D4","G2.C3","G2.D1","G2.C4","G2.D2","G2.D3","G2.C5","G3.C2","G2.C1","G2.C6","G2.C2","G3.D1","G3.C3","G4.D4","G4.D5","G5.C1","G4.D1","G3.C1","G4.D2","G4.D3","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"label":["G2.D4","G2.C3","G2.D1","G2.C4","G2.D2","G2.D3","G2.C5","G3.C2","G2.C1","G2.C6","G2.C2","G3.D1","G3.C3","G4.D4","G4.D5","G5.C1","G4.D1","G3.C1","G4.D2","G4.D3","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"color":["darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise"],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]},"edges":{"from":["G2.D4","G2.C3","G2.D1","G2.C4","G2.D2","G2.D3","G2.D4","G2.C3","G2.C5","G2.D4","G3.C2","G2.C1","G2.C6","G2.D4","G2.C1","G2.C2","G2.D2","G2.D3","G2.C6","G3.D1","G3.C2","G3.C3","G4.D4","G3.C2","G2.D4","G3.C3","G2.D4","G4.D5","G5.C1","G2.C1","G2.C2","G4.D1"],"to":["G3.D1","G3.C1","G3.C2","G3.C2","G3.C3","G3.C3","G3.C3","G4.D1","G4.D1","G4.D1","G4.D1","G4.D2","G4.D2","G4.D3","G4.D5","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C2","G5.D1","G5.D1","G6.D1","G6.D1","G6.D1","G6.C1","G6.D2","G6.D2"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"],"smooth":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"color":["black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":"100%","height":"600px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-37d4b9cdc35b89109878" style="width:100%;height:600px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-37d4b9cdc35b89109878">{"x":{"nodes":{"id":["G2.D1","G2.D4","G2.C3","G2.C4","G2.D2","G2.D3","G2.C5","G3.C2","G2.C1","G1.C1","G2.C2","G2.C6","G3.D1","G3.C3","G4.D4","G4.D5","G5.C1","G4.D1","G3.C1","G4.D2","G4.D6","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"label":["G2.D1","G2.D4","G2.C3","G2.C4","G2.D2","G2.D3","G2.C5","G3.C2","G2.C1","G1.C1","G2.C2","G2.C6","G3.D1","G3.C3","G4.D4","G4.D5","G5.C1","G4.D1","G3.C1","G4.D2","G4.D6","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"color":["darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise"],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]},"edges":{"from":["G2.D1","G2.D4","G2.C3","G2.D1","G2.C4","G2.D2","G2.D2","G2.D3","G2.D4","G2.C3","G2.C5","G3.C2","G2.C1","G2.C1","G1.C1","G2.C2","G2.D2","G2.D3","G2.C6","G3.D1","G3.C2","G3.C3","G4.D4","G3.C2","G2.D4","G3.C3","G2.D4","G4.D5","G5.C1","G2.C1","G2.C2","G4.D1"],"to":["G3.D1","G3.D1","G3.C1","G3.C2","G3.C2","G3.C2","G3.C3","G3.C3","G3.C3","G4.D1","G4.D1","G4.D1","G4.D2","G4.D5","G4.D6","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C2","G5.D1","G5.D1","G6.D1","G6.D1","G6.D1","G6.C1","G6.D2","G6.D2"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"],"smooth":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"color":["black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":"100%","height":"600px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>### evaluate the learned network
 # 1. evaluate by comparing with the ground truth
 A.learn &lt;- arcsToAdj(tlp.arcs, colnames(df))
 c(ap.score(A, A.learn), ar.score(A, A.learn), shd.score(A, A.learn))</code></pre>
-<pre><code>[1]  0.65625  0.65625 22.00000</code></pre>
+<pre><code>[1]  0.625  0.625 24.000</code></pre>
 <pre class="r"><code># 2. evaluate by checking the generalizability
-tlp.eval(tlp.arcs, df, seed = 99)  # seed is for sampling train and test set</code></pre>
+reg.eval(tlp.arcs, df, seed = 99)  # seed is for sampling train and test set</code></pre>
 <pre><code>G2.D1 G2.D2 G2.D3 G2.D4 G3.D1 G4.D1 G4.D2 G4.D3 G4.D4 G4.D5 G4.D6 G5.D1 G6.D1 
- 0.67  0.74  0.96  0.62  0.52  0.83  0.60  0.56  0.98  0.80  0.91  0.65  0.66 
+ 0.67  0.74  0.96  0.62  0.53  0.83  0.59  0.48  0.98  0.80  0.91  0.65  0.66 
 G6.D2 G6.D3 
  0.70  0.62 </code></pre>
 <pre class="r"><code># 3. evaluate by checking conditional independence consistency on sampled nodes
@@ -5704,8 +5704,104 @@ check.ci(tlp.arcs, df, x = &quot;G4.D5&quot;, y = &quot;G2.D4&quot;, z = &quot;G
  bnlearn ci.test: 0.51686 -&gt; independent 
  MXM ci.mm: 0.51686 -&gt; independent </code></pre>
 </div>
+<div id="regression-based-learning-via-lasso" class="section level2">
+<h2>2.3 Regression-based Learning via lasso</h2>
+<pre class="r"><code>####### glmtlp ######
+# learn the network by glmlasso
+lasso.arcs &lt;- lasso.fit(df)
+lasso.arcs</code></pre>
+<pre><code>    from    to
+1  G2.D1 G3.D1
+2  G2.C3 G3.D1
+3  G2.C5 G3.D1
+4  G2.D3 G3.D1
+5  G2.D4 G3.D1
+6  G2.C7 G3.D1
+7  G2.C2 G3.C1
+8  G2.C3 G3.C1
+9  G2.D1 G3.C2
+10 G2.C4 G3.C2
+11 G2.D2 G3.C2
+12 G2.C6 G3.C2
+13 G2.C7 G3.C2
+14 G2.C2 G4.D1
+15 G2.C3 G4.D1
+16 G2.C4 G4.D1
+17 G2.C5 G4.D1
+18 G2.D4 G4.D1
+19 G3.C2 G4.D1
+20 G2.C1 G4.D2
+21 G2.C2 G4.D2
+22 G2.C6 G4.D2
+23 G3.C2 G4.D2
+24 G2.D4 G4.D3
+25 G2.D1 G4.D5
+26 G2.C1 G4.D5
+27 G2.C2 G4.D5
+28 G2.C5 G4.D5
+29 G3.D1 G4.D5
+30 G1.C1 G4.D6
+31 G2.C2 G5.C1
+32 G2.D2 G5.C1
+33 G2.D3 G5.C1
+34 G2.C6 G5.C1
+35 G3.D1 G5.C1
+36 G3.C2 G5.C1
+37 G3.C3 G5.C1
+38 G4.D4 G5.C1
+39 G2.C3 G5.C2
+40 G3.C2 G5.C2
+41 G2.D4 G5.D1
+42 G3.D1 G5.D1
+43 G3.C3 G5.D1
+44 G2.D1 G6.D1
+45 G2.C2 G6.D1
+46 G2.C5 G6.D1
+47 G2.D4 G6.D1
+48 G4.D1 G6.D1
+49 G4.D5 G6.D1
+50 G5.C1 G6.D1
+51 G2.C1 G6.C1
+52 G2.C4 G6.C1
+53 G2.C6 G6.C1
+54 G2.C2 G6.D2
+55 G2.C7 G6.D2
+56 G3.D1 G6.D2
+57 G4.D1 G6.D2
+58 G4.D2 G6.D2</code></pre>
+<pre class="r"><code># plot the network
+plot.network(lasso.arcs, ht = &quot;600px&quot;)</code></pre>
+<div id="htmlwidget-77df4d15f03683219f86" style="width:100%;height:600px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-77df4d15f03683219f86">{"x":{"nodes":{"id":["G2.D1","G2.C3","G2.C5","G2.D3","G2.D4","G2.C7","G2.C2","G2.C4","G2.D2","G2.C6","G3.C2","G2.C1","G3.D1","G1.C1","G3.C3","G4.D4","G4.D1","G4.D5","G5.C1","G4.D2","G3.C1","G4.D3","G4.D6","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"label":["G2.D1","G2.C3","G2.C5","G2.D3","G2.D4","G2.C7","G2.C2","G2.C4","G2.D2","G2.C6","G3.C2","G2.C1","G3.D1","G1.C1","G3.C3","G4.D4","G4.D1","G4.D5","G5.C1","G4.D2","G3.C1","G4.D3","G4.D6","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"color":["darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise"],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]},"edges":{"from":["G2.D1","G2.C3","G2.C5","G2.D3","G2.D4","G2.C7","G2.C2","G2.C3","G2.D1","G2.C4","G2.D2","G2.C6","G2.C7","G2.C2","G2.C3","G2.C4","G2.C5","G2.D4","G3.C2","G2.C1","G2.C2","G2.C6","G3.C2","G2.D4","G2.D1","G2.C1","G2.C2","G2.C5","G3.D1","G1.C1","G2.C2","G2.D2","G2.D3","G2.C6","G3.D1","G3.C2","G3.C3","G4.D4","G2.C3","G3.C2","G2.D4","G3.D1","G3.C3","G2.D1","G2.C2","G2.C5","G2.D4","G4.D1","G4.D5","G5.C1","G2.C1","G2.C4","G2.C6","G2.C2","G2.C7","G3.D1","G4.D1","G4.D2"],"to":["G3.D1","G3.D1","G3.D1","G3.D1","G3.D1","G3.D1","G3.C1","G3.C1","G3.C2","G3.C2","G3.C2","G3.C2","G3.C2","G4.D1","G4.D1","G4.D1","G4.D1","G4.D1","G4.D1","G4.D2","G4.D2","G4.D2","G4.D2","G4.D3","G4.D5","G4.D5","G4.D5","G4.D5","G4.D5","G4.D6","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C2","G5.C2","G5.D1","G5.D1","G5.D1","G6.D1","G6.D1","G6.D1","G6.D1","G6.D1","G6.D1","G6.D1","G6.C1","G6.C1","G6.C1","G6.D2","G6.D2","G6.D2","G6.D2","G6.D2"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"],"smooth":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"color":["black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":"100%","height":"600px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>### evaluate the learned network
+# 1. evaluate by comparing with the ground truth
+A.learn &lt;- arcsToAdj(lasso.arcs, colnames(df))
+c(ap.score(A, A.learn), ar.score(A, A.learn), shd.score(A, A.learn))</code></pre>
+<pre><code>[1]  0.3965517  0.7187500 44.0000000</code></pre>
+<pre class="r"><code># 2. evaluate by checking the generalizability
+reg.eval(lasso.arcs, df, seed = 99)  # seed is for sampling train and test set</code></pre>
+<pre><code>G2.D1 G2.D2 G2.D3 G2.D4 G3.D1 G4.D1 G4.D2 G4.D3 G4.D4 G4.D5 G4.D6 G5.D1 G6.D1 
+ 0.67  0.74  0.96  0.62  0.54  0.80  0.59  0.56  0.98  0.80  0.91  0.71  0.65 
+G6.D2 G6.D3 
+ 0.67  0.62 </code></pre>
+<pre class="r"><code># 3. evaluate by checking conditional independence consistency on sampled nodes
+check.ci(lasso.arcs, df, x = &quot;G4.D5&quot;, y = &quot;G2.D4&quot;, z = &quot;G6.D1&quot;)</code></pre>
+<pre><code>G4.D5 ~ G2.D4 | G6.D1 
+ learned: dsep FALSE -&gt; dependent 
+ 
+ CODEC measure: 0.17 
+ bnlearn ci.test: 0.35893 -&gt; independent 
+ MXM ci.mm: 0.35486 -&gt; independent </code></pre>
+<pre class="r"><code>check.ci(lasso.arcs, df, x = &quot;G6.C1&quot;, y = &quot;G4.D2&quot;, z = &quot;G2.C4&quot;)</code></pre>
+<pre><code>G6.C1 ~ G4.D2 | G2.C4 
+ learned: dsep FALSE -&gt; dependent 
+ 
+ CODEC measure: -0.08454 
+ bnlearn ci.test: 0.51686 -&gt; independent 
+ MXM ci.mm: 0.51686 -&gt; independent </code></pre>
+</div>
 <div id="kernel-alignment-pc-learning-with-constraints-ckapc" class="section level2">
-<h2>2.3 Kernel Alignment PC Learning with constraints (CKAPC)</h2>
+<h2>2.4 Kernel Alignment PC Learning with constraints (CKAPC)</h2>
 <p>One big issue for CKAPC method is parameter tuning. With small changes in parameters, the learned network will differ a lot.</p>
 <pre class="r"><code>####### glmtlp ######
 # learn the network by glmtlp
