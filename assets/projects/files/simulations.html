@@ -5566,6 +5566,11 @@ colnames(df)</code></pre>
 [10] &quot;G2.D4&quot; &quot;G2.C6&quot; &quot;G2.C7&quot; &quot;G3.D1&quot; &quot;G3.C1&quot; &quot;G3.C2&quot; &quot;G3.C3&quot; &quot;G4.D1&quot; &quot;G4.D2&quot;
 [19] &quot;G4.D3&quot; &quot;G4.D4&quot; &quot;G4.D5&quot; &quot;G4.D6&quot; &quot;G5.C1&quot; &quot;G5.C2&quot; &quot;G5.C3&quot; &quot;G5.D1&quot; &quot;G6.D1&quot;
 [28] &quot;G6.C1&quot; &quot;G6.D2&quot; &quot;G6.D3&quot;</code></pre>
+</div>
+<div id="structure-learning" class="section level1">
+<h1>2 Structure Learning</h1>
+<div id="discretized-learning-via-bnlearn" class="section level2">
+<h2>2.1 Discretized Learning via bnlearn</h2>
 <pre class="r"><code># use cross validation to find the optimal bnlearn strategy
 bnl.compare(df)</code></pre>
 <pre><code>min loss: 23.39174 (tabu-bic) </code></pre>
@@ -5628,6 +5633,9 @@ check.ci(bnl.arcs, df, x = &quot;G4.D5&quot;, y = &quot;G2.D4&quot;, z = &quot;G
  CODEC measure: -0.08454 
  bnlearn ci.test: 0.51686 -&gt; independent 
  MXM ci.mm: 0.51686 -&gt; independent </code></pre>
+</div>
+<div id="regression-based-learning-via-glmtlp" class="section level2">
+<h2>2.2 Regression-based Learning via glmtlp</h2>
 <pre class="r"><code>####### glmtlp ######
 # learn the network by glmtlp
 tlp.arcs &lt;- tlp.fit(df, tau = 0.01)
@@ -5695,14 +5703,63 @@ check.ci(tlp.arcs, df, x = &quot;G4.D5&quot;, y = &quot;G2.D4&quot;, z = &quot;G
  CODEC measure: -0.08454 
  bnlearn ci.test: 0.51686 -&gt; independent 
  MXM ci.mm: 0.51686 -&gt; independent </code></pre>
+</div>
+<div id="kernel-alignment-pc-learning-with-constraints-ckapc" class="section level2">
+<h2>2.3 Kernel Alignment PC Learning with constraints (CKAPC)</h2>
+<p>One big issue for CKAPC method is parameter tuning. With small changes in parameters, the learned network will differ a lot.</p>
+<pre class="r"><code>####### glmtlp ######
+# learn the network by glmtlp
+ckapc.arcs &lt;- ckapc.fit(df, sigma=0.1, theta=1, alpha = 0.005)
+ckapc.arcs</code></pre>
+<pre><code>   from    to
+1 G2.D1 G3.D1
+2 G2.D1 G4.D1
+3 G2.D1 G4.D5
+4 G2.D4 G3.D1
+5 G2.D4 G5.D1
+6 G2.D4 G6.D1
+7 G3.C2 G5.C1
+8 G4.D1 G6.D2
+9 G4.D5 G6.D1</code></pre>
+<pre class="r"><code># plot the network
+plot.network(ckapc.arcs, ht = &quot;600px&quot;)</code></pre>
+<div id="htmlwidget-56f744bf0cd505098c30" style="width:100%;height:600px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-56f744bf0cd505098c30">{"x":{"nodes":{"id":["G2.D1","G2.D4","G3.C2","G4.D1","G4.D5","G3.D1","G5.D1","G6.D1","G5.C1","G6.D2"],"label":["G2.D1","G2.D4","G3.C2","G4.D1","G4.D5","G3.D1","G5.D1","G6.D1","G5.C1","G6.D2"],"color":["darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise"],"shadow":[true,true,true,true,true,true,true,true,true,true]},"edges":{"from":["G2.D1","G2.D1","G2.D1","G2.D4","G2.D4","G2.D4","G3.C2","G4.D1","G4.D5"],"to":["G3.D1","G4.D1","G4.D5","G3.D1","G5.D1","G6.D1","G5.C1","G6.D2","G6.D1"],"arrows":["to","to","to","to","to","to","to","to","to"],"smooth":[true,true,true,true,true,true,true,true,true],"shadow":[true,true,true,true,true,true,true,true,true],"color":["black","black","black","black","black","black","black","black","black"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":"100%","height":"600px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>### evaluate the learned network
+# 1. evaluate by comparing with the ground truth
+A.learn &lt;- arcsToAdj(ckapc.arcs, colnames(df))
+c(ap.score(A, A.learn), ar.score(A, A.learn), shd.score(A, A.learn))</code></pre>
+<pre><code>[1]  0.6666667  0.1875000 29.0000000</code></pre>
+<pre class="r"><code># 2. evaluate by checking the generalizability
+# no available method to check the generalizability of CKAPC yet.
+
+# 3. evaluate by checking conditional independence consistency on sampled nodes
+check.ci(ckapc.arcs, df, x = &quot;G4.D5&quot;, y = &quot;G2.D4&quot;, z = &quot;G6.D1&quot;)</code></pre>
+<pre><code>G4.D5 ~ G2.D4 | G6.D1 
+ learned: dsep FALSE -&gt; dependent 
+ 
+ CODEC measure: 0.16529 
+ bnlearn ci.test: 0.35893 -&gt; independent 
+ MXM ci.mm: 0.35486 -&gt; independent </code></pre>
+<pre class="r"><code>check.ci(ckapc.arcs, df, x = &quot;G6.C1&quot;, y = &quot;G4.D2&quot;, z = &quot;G2.C4&quot;)</code></pre>
+<pre><code>G6.C1 ~ G4.D2 | G2.C4 
+ learned: dsep TRUE -&gt; independent 
+ 
+ CODEC measure: -0.08454 
+ bnlearn ci.test: 0.51686 -&gt; independent 
+ MXM ci.mm: 0.51686 -&gt; independent </code></pre>
+</div>
+</div>
+<div id="methods-comparison" class="section level1">
+<h1>3 Methods Comparison</h1>
 <p>For each setting, generate a folder to save the generated data. And for comparison, different methods should use the same data sets.</p>
 <div id="setting-1" class="section level2">
-<h2>Setting 1</h2>
+<h2>3.1 Setting 1</h2>
 <pre class="r"><code>###===========  Setting 1  ===========###
 ## data simulation
 data.dir &lt;- &quot;data/setting1/&quot;
 # ifelse(!dir.exists(data.dir), dir.create(data.dir), FALSE)
-niter &lt;- 5
+niter &lt;- 10
 n &lt;- 500
 p &lt;- 10
 k &lt;- 3
@@ -5714,22 +5771,22 @@ rand.mean &lt;- FALSE
 setting.simulate(data.dir, niter, n, p, k, pr.cont, degree, seed, rand.mean)
 # evaluate bnlearn
 bnl.scores1 &lt;- simEval(data.dir, niter, method=&quot;hc-bic&quot;)</code></pre>
-<pre><code>Time difference of 0.127089 secs</code></pre>
+<pre><code>Time difference of 0.1883249 secs</code></pre>
 <pre class="r"><code>bnl.scores1</code></pre>
 <pre><code>       ap        ar       shd 
-1.0000000 0.5106061 5.0000000 </code></pre>
+1.0000000 0.5242929 4.0000000 </code></pre>
 <pre class="r"><code># evaluate glmtlp
 tlp.scores1 &lt;- simEval(data.dir, niter, method=&quot;glmtlp&quot;)</code></pre>
-<pre><code>Time difference of 47.84655 secs</code></pre>
+<pre><code>Time difference of 1.444097 mins</code></pre>
 <pre class="r"><code>tlp.scores1</code></pre>
 <pre><code>       ap        ar       shd 
-0.7003247 0.8159452 5.8000000 </code></pre>
+0.6928391 0.8202670 5.1000000 </code></pre>
 <pre class="r"><code># evaluate lasso
 lasso.scores1 &lt;- simEval(data.dir, niter, method=&quot;lasso&quot;)</code></pre>
-<pre><code>Time difference of 2.238113 secs</code></pre>
+<pre><code>Time difference of 3.964493 secs</code></pre>
 <pre class="r"><code>lasso.scores1</code></pre>
 <pre><code>       ap        ar       shd 
-0.5942626 0.8373016 8.4000000 </code></pre>
+0.5630686 0.8404690 7.0000000 </code></pre>
 </div>
 </div>
 <div id="references" class="section level1">
