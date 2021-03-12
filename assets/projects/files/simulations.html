@@ -5624,68 +5624,67 @@ check.ci(bnl.arcs, df, x = &quot;G4.D5&quot;, y = &quot;G2.D4&quot;, z = &quot;G
  learned: dsep FALSE -&gt; dependent 
  
  CODEC measure: 0.0354 
- bnlearn ci.test: 0.35893 -&gt; independent 
+ bnlearn Pearson ci.test: 0.35893 -&gt; independent 
  MXM ci.mm: 0.35486 -&gt; independent </code></pre>
 <pre class="r"><code>check.ci(bnl.arcs, df, x = &quot;G6.C1&quot;, y = &quot;G4.D2&quot;, z = &quot;G2.C4&quot;)</code></pre>
 <pre><code>G6.C1 ~ G4.D2 | G2.C4 
  learned: dsep TRUE -&gt; independent 
  
  CODEC measure: -0.08454 
- bnlearn ci.test: 0.51686 -&gt; independent 
+ bnlearn Pearson ci.test: 0.51686 -&gt; independent 
  MXM ci.mm: 0.51686 -&gt; independent </code></pre>
 </div>
-<div id="regression-based-learning-via-glmtlp" class="section level2">
-<h2>2.2 Regression-based Learning via glmtlp</h2>
+<div id="regression-based-learning-via-glmtlp-with-lambda.min" class="section level2">
+<h2>2.2 Regression-based Learning via glmtlp with lambda.min</h2>
 <pre class="r"><code>####### glmtlp ######
 # learn the network by glmtlp
-tlp.arcs &lt;- tlp.fit(df, tau = 0.01)
+tlp.arcs &lt;- tlp.fit(df, tau = 0.01, cv.lambda = &quot;lambda.min&quot;)
 tlp.arcs</code></pre>
 <pre><code>    from    to
-1  G2.D1 G3.D1
-2  G2.D4 G3.D1
-3  G2.C3 G3.C1
-4  G2.D1 G3.C2
-5  G2.C4 G3.C2
-6  G2.D2 G3.C2
-7  G2.D2 G3.C3
-8  G2.D3 G3.C3
-9  G2.D4 G3.C3
-10 G2.C3 G4.D1
-11 G2.C5 G4.D1
-12 G3.C2 G4.D1
-13 G2.C1 G4.D2
+1  G2.D4 G3.D1
+2  G2.C3 G3.C1
+3  G2.D1 G3.C2
+4  G2.C4 G3.C2
+5  G2.D2 G3.C2
+6  G2.D2 G3.C3
+7  G2.D4 G3.C3
+8  G2.C3 G4.D1
+9  G2.C5 G4.D1
+10 G2.D4 G4.D1
+11 G3.C2 G4.D1
+12 G2.C1 G4.D2
+13 G2.D4 G4.D3
 14 G2.C1 G4.D5
-15 G1.C1 G4.D6
-16 G2.C2 G5.C1
-17 G2.D2 G5.C1
-18 G2.D3 G5.C1
-19 G2.C6 G5.C1
-20 G3.D1 G5.C1
-21 G3.C2 G5.C1
-22 G3.C3 G5.C1
-23 G4.D4 G5.C1
-24 G3.C2 G5.C2
-25 G2.D4 G5.D1
-26 G3.C3 G5.D1
-27 G2.D4 G6.D1
-28 G4.D5 G6.D1
-29 G5.C1 G6.D1
-30 G2.C1 G6.C1
-31 G2.C2 G6.D2
-32 G4.D1 G6.D2</code></pre>
+15 G2.C2 G5.C1
+16 G2.D2 G5.C1
+17 G2.D3 G5.C1
+18 G2.C6 G5.C1
+19 G3.D1 G5.C1
+20 G3.C2 G5.C1
+21 G3.C3 G5.C1
+22 G4.D4 G5.C1
+23 G3.C2 G5.C2
+24 G2.D4 G5.D1
+25 G3.C3 G5.D1
+26 G2.D4 G6.D1
+27 G4.D5 G6.D1
+28 G5.C1 G6.D1
+29 G2.C1 G6.C1
+30 G2.C2 G6.D2
+31 G4.D1 G6.D2</code></pre>
 <pre class="r"><code># plot the network
 plot.network(tlp.arcs, ht = &quot;600px&quot;)</code></pre>
-<div id="htmlwidget-37d4b9cdc35b89109878" style="width:100%;height:600px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-37d4b9cdc35b89109878">{"x":{"nodes":{"id":["G2.D1","G2.D4","G2.C3","G2.C4","G2.D2","G2.D3","G2.C5","G3.C2","G2.C1","G1.C1","G2.C2","G2.C6","G3.D1","G3.C3","G4.D4","G4.D5","G5.C1","G4.D1","G3.C1","G4.D2","G4.D6","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"label":["G2.D1","G2.D4","G2.C3","G2.C4","G2.D2","G2.D3","G2.C5","G3.C2","G2.C1","G1.C1","G2.C2","G2.C6","G3.D1","G3.C3","G4.D4","G4.D5","G5.C1","G4.D1","G3.C1","G4.D2","G4.D6","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"color":["darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise"],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]},"edges":{"from":["G2.D1","G2.D4","G2.C3","G2.D1","G2.C4","G2.D2","G2.D2","G2.D3","G2.D4","G2.C3","G2.C5","G3.C2","G2.C1","G2.C1","G1.C1","G2.C2","G2.D2","G2.D3","G2.C6","G3.D1","G3.C2","G3.C3","G4.D4","G3.C2","G2.D4","G3.C3","G2.D4","G4.D5","G5.C1","G2.C1","G2.C2","G4.D1"],"to":["G3.D1","G3.D1","G3.C1","G3.C2","G3.C2","G3.C2","G3.C3","G3.C3","G3.C3","G4.D1","G4.D1","G4.D1","G4.D2","G4.D5","G4.D6","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C2","G5.D1","G5.D1","G6.D1","G6.D1","G6.D1","G6.C1","G6.D2","G6.D2"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"],"smooth":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"color":["black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":"100%","height":"600px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-eee8c3d05a772338b1f0" style="width:100%;height:600px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-eee8c3d05a772338b1f0">{"x":{"nodes":{"id":["G2.D4","G2.C3","G2.D1","G2.C4","G2.D2","G2.C5","G3.C2","G2.C1","G2.C2","G2.D3","G2.C6","G3.D1","G3.C3","G4.D4","G4.D5","G5.C1","G4.D1","G3.C1","G4.D2","G4.D3","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"label":["G2.D4","G2.C3","G2.D1","G2.C4","G2.D2","G2.C5","G3.C2","G2.C1","G2.C2","G2.D3","G2.C6","G3.D1","G3.C3","G4.D4","G4.D5","G5.C1","G4.D1","G3.C1","G4.D2","G4.D3","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"color":["darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise"],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]},"edges":{"from":["G2.D4","G2.C3","G2.D1","G2.C4","G2.D2","G2.D2","G2.D4","G2.C3","G2.C5","G2.D4","G3.C2","G2.C1","G2.D4","G2.C1","G2.C2","G2.D2","G2.D3","G2.C6","G3.D1","G3.C2","G3.C3","G4.D4","G3.C2","G2.D4","G3.C3","G2.D4","G4.D5","G5.C1","G2.C1","G2.C2","G4.D1"],"to":["G3.D1","G3.C1","G3.C2","G3.C2","G3.C2","G3.C3","G3.C3","G4.D1","G4.D1","G4.D1","G4.D1","G4.D2","G4.D3","G4.D5","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C2","G5.D1","G5.D1","G6.D1","G6.D1","G6.D1","G6.C1","G6.D2","G6.D2"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"],"smooth":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"color":["black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":"100%","height":"600px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>### evaluate the learned network
 # 1. evaluate by comparing with the ground truth
 A.learn &lt;- arcsToAdj(tlp.arcs, colnames(df))
 c(ap.score(A, A.learn), ar.score(A, A.learn), shd.score(A, A.learn))</code></pre>
-<pre><code>[1]  0.625  0.625 24.000</code></pre>
+<pre><code>[1]  0.6451613  0.6250000 23.0000000</code></pre>
 <pre class="r"><code># 2. evaluate by checking the generalizability
 reg.eval(tlp.arcs, df, seed = 99)  # seed is for sampling train and test set</code></pre>
 <pre><code>G2.D1 G2.D2 G2.D3 G2.D4 G3.D1 G4.D1 G4.D2 G4.D3 G4.D4 G4.D5 G4.D6 G5.D1 G6.D1 
- 0.67  0.74  0.96  0.62  0.53  0.83  0.59  0.48  0.98  0.80  0.91  0.65  0.66 
+ 0.67  0.74  0.96  0.62  0.52  0.83  0.59  0.56  0.98  0.80  0.91  0.65  0.66 
 G6.D2 G6.D3 
  0.70  0.62 </code></pre>
 <pre class="r"><code># 3. evaluate by checking conditional independence consistency on sampled nodes
@@ -5694,21 +5693,82 @@ check.ci(tlp.arcs, df, x = &quot;G4.D5&quot;, y = &quot;G2.D4&quot;, z = &quot;G
  learned: dsep FALSE -&gt; dependent 
  
  CODEC measure: 0.17 
- bnlearn ci.test: 0.35893 -&gt; independent 
+ bnlearn Pearson ci.test: 0.35893 -&gt; independent 
  MXM ci.mm: 0.35486 -&gt; independent </code></pre>
 <pre class="r"><code>check.ci(tlp.arcs, df, x = &quot;G6.C1&quot;, y = &quot;G4.D2&quot;, z = &quot;G2.C4&quot;)</code></pre>
 <pre><code>G6.C1 ~ G4.D2 | G2.C4 
  learned: dsep FALSE -&gt; dependent 
  
  CODEC measure: -0.08454 
- bnlearn ci.test: 0.51686 -&gt; independent 
+ bnlearn Pearson ci.test: 0.51686 -&gt; independent 
  MXM ci.mm: 0.51686 -&gt; independent </code></pre>
 </div>
-<div id="regression-based-learning-via-lasso" class="section level2">
-<h2>2.3 Regression-based Learning via lasso</h2>
+<div id="regression-based-learning-via-glmtlp-with-lambda.1se" class="section level2">
+<h2>2.3 Regression-based Learning via glmtlp with lambda.1se</h2>
+<pre class="r"><code>####### glmtlp ######
+# learn the network by glmtlp
+tlp.arcs &lt;- tlp.fit(df, tau = 0.01, cv.lambda = &quot;lambda.1se&quot;)
+tlp.arcs</code></pre>
+<pre><code>    from    to
+1  G2.D4 G3.D1
+2  G2.C3 G3.C1
+3  G2.D1 G3.C2
+4  G2.C4 G3.C2
+5  G2.C3 G4.D1
+6  G3.C2 G4.D1
+7  G2.C1 G4.D2
+8  G2.C1 G4.D5
+9  G2.C2 G5.C1
+10 G2.D2 G5.C1
+11 G2.D3 G5.C1
+12 G2.C6 G5.C1
+13 G3.C2 G5.C1
+14 G3.C3 G5.C1
+15 G4.D4 G5.C1
+16 G3.C2 G5.C2
+17 G2.D4 G5.D1
+18 G2.D4 G6.D1
+19 G4.D5 G6.D1
+20 G5.C1 G6.D1
+21 G2.C1 G6.C1
+22 G2.C2 G6.D2
+23 G4.D1 G6.D2</code></pre>
+<pre class="r"><code># plot the network
+plot.network(tlp.arcs, ht = &quot;600px&quot;)</code></pre>
+<div id="htmlwidget-95931322929c2020cddd" style="width:100%;height:600px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-95931322929c2020cddd">{"x":{"nodes":{"id":["G2.D4","G2.C3","G2.D1","G2.C4","G3.C2","G2.C1","G2.C2","G2.D2","G2.D3","G2.C6","G3.C3","G4.D4","G4.D5","G5.C1","G4.D1","G3.D1","G3.C1","G4.D2","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"label":["G2.D4","G2.C3","G2.D1","G2.C4","G3.C2","G2.C1","G2.C2","G2.D2","G2.D3","G2.C6","G3.C3","G4.D4","G4.D5","G5.C1","G4.D1","G3.D1","G3.C1","G4.D2","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"color":["darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise"],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]},"edges":{"from":["G2.D4","G2.C3","G2.D1","G2.C4","G2.C3","G3.C2","G2.C1","G2.C1","G2.C2","G2.D2","G2.D3","G2.C6","G3.C2","G3.C3","G4.D4","G3.C2","G2.D4","G2.D4","G4.D5","G5.C1","G2.C1","G2.C2","G4.D1"],"to":["G3.D1","G3.C1","G3.C2","G3.C2","G4.D1","G4.D1","G4.D2","G4.D5","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C2","G5.D1","G6.D1","G6.D1","G6.D1","G6.C1","G6.D2","G6.D2"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"],"smooth":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"color":["black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":"100%","height":"600px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>### evaluate the learned network
+# 1. evaluate by comparing with the ground truth
+A.learn &lt;- arcsToAdj(tlp.arcs, colnames(df))
+c(ap.score(A, A.learn), ar.score(A, A.learn), shd.score(A, A.learn))</code></pre>
+<pre><code>[1]  0.826087  0.593750 17.000000</code></pre>
+<pre class="r"><code># 2. evaluate by checking the generalizability
+reg.eval(tlp.arcs, df, seed = 99)  # seed is for sampling train and test set</code></pre>
+<pre><code>G2.D1 G2.D2 G2.D3 G2.D4 G3.D1 G4.D1 G4.D2 G4.D3 G4.D4 G4.D5 G4.D6 G5.D1 G6.D1 
+ 0.67  0.74  0.96  0.62  0.52  0.79  0.59  0.48  0.98  0.80  0.91  0.73  0.66 
+G6.D2 G6.D3 
+ 0.70  0.62 </code></pre>
+<pre class="r"><code># 3. evaluate by checking conditional independence consistency on sampled nodes
+check.ci(tlp.arcs, df, x = &quot;G4.D5&quot;, y = &quot;G2.D4&quot;, z = &quot;G6.D1&quot;)</code></pre>
+<pre><code>G4.D5 ~ G2.D4 | G6.D1 
+ learned: dsep FALSE -&gt; dependent 
+ 
+ CODEC measure: 0.17 
+ bnlearn Pearson ci.test: 0.35893 -&gt; independent 
+ MXM ci.mm: 0.35486 -&gt; independent </code></pre>
+<pre class="r"><code>check.ci(tlp.arcs, df, x = &quot;G6.C1&quot;, y = &quot;G4.D2&quot;, z = &quot;G2.C4&quot;)</code></pre>
+<pre><code>G6.C1 ~ G4.D2 | G2.C4 
+ learned: dsep FALSE -&gt; dependent 
+ 
+ CODEC measure: -0.08454 
+ bnlearn Pearson ci.test: 0.51686 -&gt; independent 
+ MXM ci.mm: 0.51686 -&gt; independent </code></pre>
+</div>
+<div id="regression-based-learning-via-lasso-with-lambda.min" class="section level2">
+<h2>2.4 Regression-based Learning via lasso with lambda.min</h2>
 <pre class="r"><code>####### glmtlp ######
 # learn the network by glmlasso
-lasso.arcs &lt;- lasso.fit(df)
+lasso.arcs &lt;- lasso.fit(df, cv.lambda = &quot;lambda.min&quot;)
 lasso.arcs</code></pre>
 <pre><code>    from    to
 1  G2.D1 G3.D1
@@ -5719,69 +5779,77 @@ lasso.arcs</code></pre>
 6  G2.C7 G3.D1
 7  G2.C2 G3.C1
 8  G2.C3 G3.C1
-9  G2.D1 G3.C2
-10 G2.C4 G3.C2
-11 G2.D2 G3.C2
-12 G2.C6 G3.C2
-13 G2.C7 G3.C2
-14 G2.C2 G4.D1
-15 G2.C3 G4.D1
-16 G2.C4 G4.D1
-17 G2.C5 G4.D1
-18 G2.D4 G4.D1
-19 G3.C2 G4.D1
-20 G2.C1 G4.D2
-21 G2.C2 G4.D2
-22 G2.C6 G4.D2
-23 G3.C2 G4.D2
-24 G2.D4 G4.D3
-25 G2.D1 G4.D5
-26 G2.C1 G4.D5
-27 G2.C2 G4.D5
-28 G2.C5 G4.D5
-29 G3.D1 G4.D5
-30 G1.C1 G4.D6
-31 G2.C2 G5.C1
-32 G2.D2 G5.C1
-33 G2.D3 G5.C1
-34 G2.C6 G5.C1
-35 G3.D1 G5.C1
-36 G3.C2 G5.C1
-37 G3.C3 G5.C1
-38 G4.D4 G5.C1
-39 G2.C3 G5.C2
-40 G3.C2 G5.C2
-41 G2.D4 G5.D1
-42 G3.D1 G5.D1
-43 G3.C3 G5.D1
-44 G2.D1 G6.D1
-45 G2.C2 G6.D1
-46 G2.C5 G6.D1
-47 G2.D4 G6.D1
-48 G4.D1 G6.D1
-49 G4.D5 G6.D1
-50 G5.C1 G6.D1
-51 G2.C1 G6.C1
-52 G2.C4 G6.C1
-53 G2.C6 G6.C1
-54 G2.C2 G6.D2
-55 G2.C7 G6.D2
-56 G3.D1 G6.D2
-57 G4.D1 G6.D2
-58 G4.D2 G6.D2</code></pre>
+9  G1.C1 G3.C2
+10 G2.D1 G3.C2
+11 G2.C2 G3.C2
+12 G2.C3 G3.C2
+13 G2.C4 G3.C2
+14 G2.C5 G3.C2
+15 G2.D2 G3.C2
+16 G2.D3 G3.C2
+17 G2.D4 G3.C2
+18 G2.C6 G3.C2
+19 G2.C7 G3.C2
+20 G2.C3 G4.D1
+21 G2.C5 G4.D1
+22 G2.D4 G4.D1
+23 G3.C2 G4.D1
+24 G2.C1 G4.D2
+25 G2.C2 G4.D2
+26 G2.C6 G4.D2
+27 G3.C2 G4.D2
+28 G2.D4 G4.D3
+29 G2.D1 G4.D5
+30 G2.C1 G4.D5
+31 G2.C2 G4.D5
+32 G2.C5 G4.D5
+33 G3.D1 G4.D5
+34 G3.C2 G4.D5
+35 G3.C3 G4.D5
+36 G1.C1 G4.D6
+37 G2.C2 G5.C1
+38 G2.D2 G5.C1
+39 G2.D3 G5.C1
+40 G2.C6 G5.C1
+41 G3.D1 G5.C1
+42 G3.C2 G5.C1
+43 G3.C3 G5.C1
+44 G4.D4 G5.C1
+45 G2.C3 G5.C2
+46 G3.C2 G5.C2
+47 G2.D4 G5.D1
+48 G3.D1 G5.D1
+49 G3.C3 G5.D1
+50 G2.D1 G6.D1
+51 G2.C2 G6.D1
+52 G2.C5 G6.D1
+53 G2.D2 G6.D1
+54 G2.D4 G6.D1
+55 G4.D1 G6.D1
+56 G4.D5 G6.D1
+57 G4.D6 G6.D1
+58 G5.C1 G6.D1
+59 G2.C1 G6.C1
+60 G2.C4 G6.C1
+61 G2.C6 G6.C1
+62 G2.C2 G6.D2
+63 G2.C7 G6.D2
+64 G3.D1 G6.D2
+65 G4.D1 G6.D2
+66 G4.D2 G6.D2</code></pre>
 <pre class="r"><code># plot the network
 plot.network(lasso.arcs, ht = &quot;600px&quot;)</code></pre>
-<div id="htmlwidget-77df4d15f03683219f86" style="width:100%;height:600px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-77df4d15f03683219f86">{"x":{"nodes":{"id":["G2.D1","G2.C3","G2.C5","G2.D3","G2.D4","G2.C7","G2.C2","G2.C4","G2.D2","G2.C6","G3.C2","G2.C1","G3.D1","G1.C1","G3.C3","G4.D4","G4.D1","G4.D5","G5.C1","G4.D2","G3.C1","G4.D3","G4.D6","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"label":["G2.D1","G2.C3","G2.C5","G2.D3","G2.D4","G2.C7","G2.C2","G2.C4","G2.D2","G2.C6","G3.C2","G2.C1","G3.D1","G1.C1","G3.C3","G4.D4","G4.D1","G4.D5","G5.C1","G4.D2","G3.C1","G4.D3","G4.D6","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"color":["darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise"],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]},"edges":{"from":["G2.D1","G2.C3","G2.C5","G2.D3","G2.D4","G2.C7","G2.C2","G2.C3","G2.D1","G2.C4","G2.D2","G2.C6","G2.C7","G2.C2","G2.C3","G2.C4","G2.C5","G2.D4","G3.C2","G2.C1","G2.C2","G2.C6","G3.C2","G2.D4","G2.D1","G2.C1","G2.C2","G2.C5","G3.D1","G1.C1","G2.C2","G2.D2","G2.D3","G2.C6","G3.D1","G3.C2","G3.C3","G4.D4","G2.C3","G3.C2","G2.D4","G3.D1","G3.C3","G2.D1","G2.C2","G2.C5","G2.D4","G4.D1","G4.D5","G5.C1","G2.C1","G2.C4","G2.C6","G2.C2","G2.C7","G3.D1","G4.D1","G4.D2"],"to":["G3.D1","G3.D1","G3.D1","G3.D1","G3.D1","G3.D1","G3.C1","G3.C1","G3.C2","G3.C2","G3.C2","G3.C2","G3.C2","G4.D1","G4.D1","G4.D1","G4.D1","G4.D1","G4.D1","G4.D2","G4.D2","G4.D2","G4.D2","G4.D3","G4.D5","G4.D5","G4.D5","G4.D5","G4.D5","G4.D6","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C2","G5.C2","G5.D1","G5.D1","G5.D1","G6.D1","G6.D1","G6.D1","G6.D1","G6.D1","G6.D1","G6.D1","G6.C1","G6.C1","G6.C1","G6.D2","G6.D2","G6.D2","G6.D2","G6.D2"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"],"smooth":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"color":["black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":"100%","height":"600px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d49f98c7fc6f5f06a8e6" style="width:100%;height:600px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d49f98c7fc6f5f06a8e6">{"x":{"nodes":{"id":["G2.D1","G2.C3","G2.C5","G2.D3","G2.D4","G2.C7","G2.C2","G1.C1","G2.C4","G2.D2","G2.C6","G3.C2","G2.C1","G3.D1","G3.C3","G4.D4","G4.D1","G4.D5","G4.D6","G5.C1","G4.D2","G3.C1","G4.D3","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"label":["G2.D1","G2.C3","G2.C5","G2.D3","G2.D4","G2.C7","G2.C2","G1.C1","G2.C4","G2.D2","G2.C6","G3.C2","G2.C1","G3.D1","G3.C3","G4.D4","G4.D1","G4.D5","G4.D6","G5.C1","G4.D2","G3.C1","G4.D3","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"color":["darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise"],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]},"edges":{"from":["G2.D1","G2.C3","G2.C5","G2.D3","G2.D4","G2.C7","G2.C2","G2.C3","G1.C1","G2.D1","G2.C2","G2.C3","G2.C4","G2.C5","G2.D2","G2.D3","G2.D4","G2.C6","G2.C7","G2.C3","G2.C5","G2.D4","G3.C2","G2.C1","G2.C2","G2.C6","G3.C2","G2.D4","G2.D1","G2.C1","G2.C2","G2.C5","G3.D1","G3.C2","G3.C3","G1.C1","G2.C2","G2.D2","G2.D3","G2.C6","G3.D1","G3.C2","G3.C3","G4.D4","G2.C3","G3.C2","G2.D4","G3.D1","G3.C3","G2.D1","G2.C2","G2.C5","G2.D2","G2.D4","G4.D1","G4.D5","G4.D6","G5.C1","G2.C1","G2.C4","G2.C6","G2.C2","G2.C7","G3.D1","G4.D1","G4.D2"],"to":["G3.D1","G3.D1","G3.D1","G3.D1","G3.D1","G3.D1","G3.C1","G3.C1","G3.C2","G3.C2","G3.C2","G3.C2","G3.C2","G3.C2","G3.C2","G3.C2","G3.C2","G3.C2","G3.C2","G4.D1","G4.D1","G4.D1","G4.D1","G4.D2","G4.D2","G4.D2","G4.D2","G4.D3","G4.D5","G4.D5","G4.D5","G4.D5","G4.D5","G4.D5","G4.D5","G4.D6","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C2","G5.C2","G5.D1","G5.D1","G5.D1","G6.D1","G6.D1","G6.D1","G6.D1","G6.D1","G6.D1","G6.D1","G6.D1","G6.D1","G6.C1","G6.C1","G6.C1","G6.D2","G6.D2","G6.D2","G6.D2","G6.D2"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"],"smooth":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"color":["black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":"100%","height":"600px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>### evaluate the learned network
 # 1. evaluate by comparing with the ground truth
 A.learn &lt;- arcsToAdj(lasso.arcs, colnames(df))
 c(ap.score(A, A.learn), ar.score(A, A.learn), shd.score(A, A.learn))</code></pre>
-<pre><code>[1]  0.3965517  0.7187500 44.0000000</code></pre>
+<pre><code>[1]  0.3484848  0.7187500 52.0000000</code></pre>
 <pre class="r"><code># 2. evaluate by checking the generalizability
 reg.eval(lasso.arcs, df, seed = 99)  # seed is for sampling train and test set</code></pre>
 <pre><code>G2.D1 G2.D2 G2.D3 G2.D4 G3.D1 G4.D1 G4.D2 G4.D3 G4.D4 G4.D5 G4.D6 G5.D1 G6.D1 
- 0.67  0.74  0.96  0.62  0.54  0.80  0.59  0.56  0.98  0.80  0.91  0.71  0.65 
+ 0.67  0.74  0.96  0.62  0.54  0.83  0.59  0.56  0.98  0.81  0.91  0.71  0.65 
 G6.D2 G6.D3 
  0.67  0.62 </code></pre>
 <pre class="r"><code># 3. evaluate by checking conditional independence consistency on sampled nodes
@@ -5790,18 +5858,79 @@ check.ci(lasso.arcs, df, x = &quot;G4.D5&quot;, y = &quot;G2.D4&quot;, z = &quot
  learned: dsep FALSE -&gt; dependent 
  
  CODEC measure: 0.17 
- bnlearn ci.test: 0.35893 -&gt; independent 
+ bnlearn Pearson ci.test: 0.35893 -&gt; independent 
  MXM ci.mm: 0.35486 -&gt; independent </code></pre>
 <pre class="r"><code>check.ci(lasso.arcs, df, x = &quot;G6.C1&quot;, y = &quot;G4.D2&quot;, z = &quot;G2.C4&quot;)</code></pre>
 <pre><code>G6.C1 ~ G4.D2 | G2.C4 
  learned: dsep FALSE -&gt; dependent 
  
  CODEC measure: -0.08454 
- bnlearn ci.test: 0.51686 -&gt; independent 
+ bnlearn Pearson ci.test: 0.51686 -&gt; independent 
+ MXM ci.mm: 0.51686 -&gt; independent </code></pre>
+</div>
+<div id="regression-based-learning-via-lasso-with-lambda.1se" class="section level2">
+<h2>2.5 Regression-based Learning via lasso with lambda.1se</h2>
+<pre class="r"><code>####### glmtlp ######
+# learn the network by glmlasso
+lasso.arcs &lt;- lasso.fit(df, cv.lambda = &quot;lambda.1se&quot;)
+lasso.arcs</code></pre>
+<pre><code>    from    to
+1  G2.C3 G3.C1
+2  G2.D1 G3.C2
+3  G2.C4 G3.C2
+4  G2.C3 G4.D1
+5  G2.C5 G4.D1
+6  G3.C2 G4.D1
+7  G2.C1 G4.D2
+8  G2.C6 G4.D2
+9  G2.C1 G4.D5
+10 G2.C2 G5.C1
+11 G2.D2 G5.C1
+12 G2.D3 G5.C1
+13 G3.C2 G5.C1
+14 G3.C3 G5.C1
+15 G4.D4 G5.C1
+16 G3.C2 G5.C2
+17 G2.D4 G5.D1
+18 G2.D4 G6.D1
+19 G4.D5 G6.D1
+20 G5.C1 G6.D1
+21 G2.C1 G6.C1
+22 G2.C2 G6.D2
+23 G4.D1 G6.D2</code></pre>
+<pre class="r"><code># plot the network
+plot.network(lasso.arcs, ht = &quot;600px&quot;)</code></pre>
+<div id="htmlwidget-3922978bd68d1fa29e91" style="width:100%;height:600px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3922978bd68d1fa29e91">{"x":{"nodes":{"id":["G2.C3","G2.D1","G2.C4","G2.C5","G3.C2","G2.C1","G2.C6","G2.C2","G2.D2","G2.D3","G3.C3","G4.D4","G2.D4","G4.D5","G5.C1","G4.D1","G3.C1","G4.D2","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"label":["G2.C3","G2.D1","G2.C4","G2.C5","G3.C2","G2.C1","G2.C6","G2.C2","G2.D2","G2.D3","G3.C3","G4.D4","G2.D4","G4.D5","G5.C1","G4.D1","G3.C1","G4.D2","G5.C2","G5.D1","G6.D1","G6.C1","G6.D2"],"color":["darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise"],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]},"edges":{"from":["G2.C3","G2.D1","G2.C4","G2.C3","G2.C5","G3.C2","G2.C1","G2.C6","G2.C1","G2.C2","G2.D2","G2.D3","G3.C2","G3.C3","G4.D4","G3.C2","G2.D4","G2.D4","G4.D5","G5.C1","G2.C1","G2.C2","G4.D1"],"to":["G3.C1","G3.C2","G3.C2","G4.D1","G4.D1","G4.D1","G4.D2","G4.D2","G4.D5","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C1","G5.C2","G5.D1","G6.D1","G6.D1","G6.D1","G6.C1","G6.D2","G6.D2"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"],"smooth":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"shadow":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],"color":["black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":"100%","height":"600px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>### evaluate the learned network
+# 1. evaluate by comparing with the ground truth
+A.learn &lt;- arcsToAdj(lasso.arcs, colnames(df))
+c(ap.score(A, A.learn), ar.score(A, A.learn), shd.score(A, A.learn))</code></pre>
+<pre><code>[1]  0.8695652  0.6250000 15.0000000</code></pre>
+<pre class="r"><code># 2. evaluate by checking the generalizability
+reg.eval(lasso.arcs, df, seed = 99)  # seed is for sampling train and test set</code></pre>
+<pre><code>G2.D1 G2.D2 G2.D3 G2.D4 G3.D1 G4.D1 G4.D2 G4.D3 G4.D4 G4.D5 G4.D6 G5.D1 G6.D1 
+ 0.67  0.74  0.96  0.62  0.52  0.83  0.60  0.48  0.98  0.80  0.91  0.73  0.66 
+G6.D2 G6.D3 
+ 0.70  0.62 </code></pre>
+<pre class="r"><code># 3. evaluate by checking conditional independence consistency on sampled nodes
+check.ci(lasso.arcs, df, x = &quot;G4.D5&quot;, y = &quot;G2.D4&quot;, z = &quot;G6.D1&quot;)</code></pre>
+<pre><code>G4.D5 ~ G2.D4 | G6.D1 
+ learned: dsep FALSE -&gt; dependent 
+ 
+ CODEC measure: 0.17 
+ bnlearn Pearson ci.test: 0.35893 -&gt; independent 
+ MXM ci.mm: 0.35486 -&gt; independent </code></pre>
+<pre class="r"><code>check.ci(lasso.arcs, df, x = &quot;G6.C1&quot;, y = &quot;G4.D2&quot;, z = &quot;G2.C4&quot;)</code></pre>
+<pre><code>G6.C1 ~ G4.D2 | G2.C4 
+ learned: dsep FALSE -&gt; dependent 
+ 
+ CODEC measure: -0.08454 
+ bnlearn Pearson ci.test: 0.51686 -&gt; independent 
  MXM ci.mm: 0.51686 -&gt; independent </code></pre>
 </div>
 <div id="kernel-alignment-pc-learning-with-constraints-ckapc" class="section level2">
-<h2>2.4 Kernel Alignment PC Learning with constraints (CKAPC)</h2>
+<h2>2.6 Kernel Alignment PC Learning with constraints (CKAPC)</h2>
 <p>One big issue for CKAPC method is parameter tuning. With small changes in parameters, the learned network will differ a lot.</p>
 <pre class="r"><code>####### glmtlp ######
 # learn the network by glmtlp
@@ -5819,8 +5948,8 @@ ckapc.arcs</code></pre>
 9 G4.D5 G6.D1</code></pre>
 <pre class="r"><code># plot the network
 plot.network(ckapc.arcs, ht = &quot;600px&quot;)</code></pre>
-<div id="htmlwidget-56f744bf0cd505098c30" style="width:100%;height:600px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-56f744bf0cd505098c30">{"x":{"nodes":{"id":["G2.D1","G2.D4","G3.C2","G4.D1","G4.D5","G3.D1","G5.D1","G6.D1","G5.C1","G6.D2"],"label":["G2.D1","G2.D4","G3.C2","G4.D1","G4.D5","G3.D1","G5.D1","G6.D1","G5.C1","G6.D2"],"color":["darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise"],"shadow":[true,true,true,true,true,true,true,true,true,true]},"edges":{"from":["G2.D1","G2.D1","G2.D1","G2.D4","G2.D4","G2.D4","G3.C2","G4.D1","G4.D5"],"to":["G3.D1","G4.D1","G4.D5","G3.D1","G5.D1","G6.D1","G5.C1","G6.D2","G6.D1"],"arrows":["to","to","to","to","to","to","to","to","to"],"smooth":[true,true,true,true,true,true,true,true,true],"shadow":[true,true,true,true,true,true,true,true,true],"color":["black","black","black","black","black","black","black","black","black"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":"100%","height":"600px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e661ba9ba12eb535f9f4" style="width:100%;height:600px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e661ba9ba12eb535f9f4">{"x":{"nodes":{"id":["G2.D1","G2.D4","G3.C2","G4.D1","G4.D5","G3.D1","G5.D1","G6.D1","G5.C1","G6.D2"],"label":["G2.D1","G2.D4","G3.C2","G4.D1","G4.D5","G3.D1","G5.D1","G6.D1","G5.C1","G6.D2"],"color":["darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise","darkturquoise"],"shadow":[true,true,true,true,true,true,true,true,true,true]},"edges":{"from":["G2.D1","G2.D1","G2.D1","G2.D4","G2.D4","G2.D4","G3.C2","G4.D1","G4.D5"],"to":["G3.D1","G4.D1","G4.D5","G3.D1","G5.D1","G6.D1","G5.C1","G6.D2","G6.D1"],"arrows":["to","to","to","to","to","to","to","to","to"],"smooth":[true,true,true,true,true,true,true,true,true],"shadow":[true,true,true,true,true,true,true,true,true],"color":["black","black","black","black","black","black","black","black","black"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":"100%","height":"600px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>### evaluate the learned network
 # 1. evaluate by comparing with the ground truth
 A.learn &lt;- arcsToAdj(ckapc.arcs, colnames(df))
@@ -5835,14 +5964,14 @@ check.ci(ckapc.arcs, df, x = &quot;G4.D5&quot;, y = &quot;G2.D4&quot;, z = &quot
  learned: dsep FALSE -&gt; dependent 
  
  CODEC measure: 0.16529 
- bnlearn ci.test: 0.35893 -&gt; independent 
+ bnlearn Pearson ci.test: 0.35893 -&gt; independent 
  MXM ci.mm: 0.35486 -&gt; independent </code></pre>
 <pre class="r"><code>check.ci(ckapc.arcs, df, x = &quot;G6.C1&quot;, y = &quot;G4.D2&quot;, z = &quot;G2.C4&quot;)</code></pre>
 <pre><code>G6.C1 ~ G4.D2 | G2.C4 
  learned: dsep TRUE -&gt; independent 
  
  CODEC measure: -0.08454 
- bnlearn ci.test: 0.51686 -&gt; independent 
+ bnlearn Pearson ci.test: 0.51686 -&gt; independent 
  MXM ci.mm: 0.51686 -&gt; independent </code></pre>
 </div>
 </div>
@@ -5854,8 +5983,9 @@ check.ci(ckapc.arcs, df, x = &quot;G4.D5&quot;, y = &quot;G2.D4&quot;, z = &quot
 <pre class="r"><code>###===========  Setting 1  ===========###
 ## data simulation
 data.dir &lt;- &quot;data/setting1/&quot;
-# ifelse(!dir.exists(data.dir), dir.create(data.dir), FALSE)
-niter &lt;- 10
+ifelse(!dir.exists(data.dir), dir.create(data.dir), FALSE)</code></pre>
+<pre><code>[1] FALSE</code></pre>
+<pre class="r"><code>niter &lt;- 10
 n &lt;- 500
 p &lt;- 10
 k &lt;- 3
@@ -5867,22 +5997,285 @@ rand.mean &lt;- FALSE
 setting.simulate(data.dir, niter, n, p, k, pr.cont, degree, seed, rand.mean)
 # evaluate bnlearn
 bnl.scores1 &lt;- simEval(data.dir, niter, method=&quot;hc-bic&quot;)</code></pre>
-<pre><code>Time difference of 0.1883249 secs</code></pre>
+<pre><code>Time difference of 0.21823 secs</code></pre>
 <pre class="r"><code>bnl.scores1</code></pre>
-<pre><code>       ap        ar       shd 
-1.0000000 0.5242929 4.0000000 </code></pre>
-<pre class="r"><code># evaluate glmtlp
-tlp.scores1 &lt;- simEval(data.dir, niter, method=&quot;glmtlp&quot;)</code></pre>
-<pre><code>Time difference of 1.444097 mins</code></pre>
+<pre><code>                 ap                  ar                 shd 
+            &quot;1 (0)&quot; &quot;0.52429 (0.14156)&quot;       &quot;4 (2.10819)&quot; </code></pre>
+<pre class="r"><code># evaluate glmtlp.min
+tlp.scores1 &lt;- simEval(data.dir, niter, method=&quot;glmtlp&quot;, tlp.cv.lambda=&quot;lambda.min&quot;)</code></pre>
+<pre><code>Time difference of 34.60276 secs</code></pre>
 <pre class="r"><code>tlp.scores1</code></pre>
-<pre><code>       ap        ar       shd 
-0.6928391 0.8202670 5.1000000 </code></pre>
-<pre class="r"><code># evaluate lasso
-lasso.scores1 &lt;- simEval(data.dir, niter, method=&quot;lasso&quot;)</code></pre>
-<pre><code>Time difference of 3.964493 secs</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.63187 (0.23511)&quot; &quot;0.84646 (0.19705)&quot;     &quot;6.1 (3.44642)&quot; </code></pre>
+<pre class="r"><code># evaluate glmtlp.1se
+tlp.scores1.2 &lt;- simEval(data.dir, niter, method=&quot;glmtlp&quot;, tlp.cv.lambda=&quot;lambda.1se&quot;)</code></pre>
+<pre><code>Time difference of 33.53488 secs</code></pre>
+<pre class="r"><code>tlp.scores1.2</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.70947 (0.24364)&quot; &quot;0.80043 (0.19663)&quot;     &quot;5.2 (3.61478)&quot; </code></pre>
+<pre class="r"><code># evaluate lasso.min
+lasso.scores1 &lt;- simEval(data.dir, niter, method=&quot;lasso&quot;, lasso.cv.lambda=&quot;lambda.min&quot;)</code></pre>
+<pre><code>Time difference of 3.265015 secs</code></pre>
 <pre class="r"><code>lasso.scores1</code></pre>
-<pre><code>       ap        ar       shd 
-0.5630686 0.8404690 7.0000000 </code></pre>
+<pre><code>                ap                 ar                shd 
+&quot;0.5765 (0.21914)&quot; &quot;0.86067 (0.2038)&quot;    &quot;6.4 (3.40588)&quot; </code></pre>
+<pre class="r"><code># evaluate lasso
+lasso.scores1.2 &lt;- simEval(data.dir, niter, method=&quot;lasso&quot;, lasso.cv.lambda=&quot;lambda.1se&quot;)</code></pre>
+<pre><code>Time difference of 3.157208 secs</code></pre>
+<pre class="r"><code>lasso.scores1.2</code></pre>
+<pre><code>                 ap                  ar                 shd 
+ &quot;0.9173 (0.15558)&quot; &quot;0.64911 (0.26319)&quot;       &quot;3 (1.76383)&quot; </code></pre>
+<pre class="r"><code># evaluate ckapc
+ckapc.scores1 &lt;- simEval(data.dir, niter, method=&quot;ckapc&quot;, 
+                         ckapc.sigma=0.01, ckapc.theta=1, ckapc.alpha=0.01)</code></pre>
+<pre><code>Time difference of 3.879177 secs</code></pre>
+<pre class="r"><code>ckapc.scores1</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.25501 (0.10652)&quot;  &quot;0.37297 (0.0902)&quot;    &quot;14.4 (4.55095)&quot; </code></pre>
+</div>
+<div id="setting-2" class="section level2">
+<h2>3.2 Setting 2</h2>
+<pre class="r"><code>###===========  Setting 2  ===========###
+## data simulation
+data.dir &lt;- &quot;data/setting2/&quot;
+ifelse(!dir.exists(data.dir), dir.create(data.dir), FALSE)</code></pre>
+<pre><code>[1] FALSE</code></pre>
+<pre class="r"><code>niter &lt;- 10
+n &lt;- 1000
+p &lt;- 50
+k &lt;- 15
+pr.cont &lt;- 0.5
+degree &lt;- 4
+seed &lt;- 99
+rand.mean &lt;- FALSE
+# simulate data
+setting.simulate(data.dir, niter, n, p, k, pr.cont, degree, seed, rand.mean)
+# evaluate bnlearn
+bnl.scores2 &lt;- simEval(data.dir, niter, method=&quot;hc-bic&quot;)</code></pre>
+<pre><code>Time difference of 1.314968 secs</code></pre>
+<pre class="r"><code>bnl.scores2</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.90185 (0.03706)&quot; &quot;0.56409 (0.05599)&quot;    &quot;41.1 (5.42525)&quot; </code></pre>
+<pre class="r"><code># evaluate glmtlp.min
+tlp.scores2 &lt;- simEval(data.dir, niter, method=&quot;glmtlp&quot;, tlp.cv.lambda=&quot;lambda.min&quot;)</code></pre>
+<pre><code>Time difference of 7.081184 mins</code></pre>
+<pre class="r"><code>tlp.scores2</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.58848 (0.05498)&quot; &quot;0.80039 (0.05882)&quot;   &quot;64.4 (15.41428)&quot; </code></pre>
+<pre class="r"><code># evaluate glmtlp.1se
+tlp.scores2.2 &lt;- simEval(data.dir, niter, method=&quot;glmtlp&quot;, tlp.cv.lambda=&quot;lambda.1se&quot;)</code></pre>
+<pre><code>Time difference of 7.108143 mins</code></pre>
+<pre class="r"><code>tlp.scores2.2</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.80013 (0.05459)&quot; &quot;0.68239 (0.06806)&quot;    &quot;40.7 (4.96767)&quot; </code></pre>
+<pre class="r"><code># evaluate lasso.min
+lasso.scores2 &lt;- simEval(data.dir, niter, method=&quot;lasso&quot;, lasso.cv.lambda=&quot;lambda.min&quot;)</code></pre>
+<pre><code>Time difference of 31.70161 secs</code></pre>
+<pre class="r"><code>lasso.scores2</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.31484 (0.03498)&quot; &quot;0.86987 (0.05884)&quot;   &quot;170.4 (29.6543)&quot; </code></pre>
+<pre class="r"><code># evaluate lasso
+lasso.scores2.2 &lt;- simEval(data.dir, niter, method=&quot;lasso&quot;, lasso.cv.lambda=&quot;lambda.1se&quot;)</code></pre>
+<pre><code>Time difference of 32.83055 secs</code></pre>
+<pre class="r"><code>lasso.scores2.2</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.76956 (0.06905)&quot; &quot;0.71317 (0.09051)&quot;    &quot;42.6 (9.51256)&quot; </code></pre>
+<!-- # ```{r setting2-ckapc} -->
+<!-- # # evaluate ckapc -->
+<!-- # ckapc.scores2 <- simEval(data.dir, niter, method="ckapc",  -->
+<!-- #                          ckapc.sigma=0.01, ckapc.theta=1, ckapc.alpha=0.01) -->
+<!-- # ckapc.scores2 -->
+<!-- # ``` -->
+</div>
+<div id="setting-3" class="section level2">
+<h2>3.3 Setting 3</h2>
+<pre class="r"><code>###===========  Setting 3  ===========###
+## data simulation
+data.dir &lt;- &quot;data/setting3/&quot;
+ifelse(!dir.exists(data.dir), dir.create(data.dir), FALSE)</code></pre>
+<pre><code>[1] FALSE</code></pre>
+<pre class="r"><code>niter &lt;- 10
+n &lt;- 500
+p &lt;- 10
+k &lt;- 3
+pr.cont &lt;- 0.1
+degree &lt;- 4
+seed &lt;- 99
+rand.mean &lt;- FALSE
+# simulate data
+setting.simulate(data.dir, niter, n, p, k, pr.cont, degree, seed, rand.mean)
+# evaluate bnlearn
+bnl.scores3 &lt;- simEval(data.dir, niter, method=&quot;hc-bic&quot;)</code></pre>
+<pre><code>Time difference of 0.2130527 secs</code></pre>
+<pre class="r"><code>bnl.scores3</code></pre>
+<pre><code>                 ap                  ar                 shd 
+  &quot;0.875 (0.31732)&quot; &quot;0.45988 (0.23187)&quot;     &quot;4.5 (2.01384)&quot; </code></pre>
+<pre class="r"><code># evaluate glmtlp.min
+tlp.scores3 &lt;- simEval(data.dir, niter, method=&quot;glmtlp&quot;, tlp.cv.lambda=&quot;lambda.min&quot;)</code></pre>
+<pre><code>Time difference of 35.22566 secs</code></pre>
+<pre class="r"><code>tlp.scores3</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.54351 (0.16818)&quot; &quot;0.70196 (0.20089)&quot;     &quot;7.3 (2.90784)&quot; </code></pre>
+<pre class="r"><code># evaluate glmtlp.1se
+tlp.scores3.2 &lt;- simEval(data.dir, niter, method=&quot;glmtlp&quot;, tlp.cv.lambda=&quot;lambda.1se&quot;)</code></pre>
+<pre><code>Time difference of 33.86782 secs</code></pre>
+<pre class="r"><code>tlp.scores3.2</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.60909 (0.28488)&quot; &quot;0.58421 (0.24898)&quot;       &quot;6 (3.09121)&quot; </code></pre>
+<pre class="r"><code># evaluate lasso.min
+lasso.scores3 &lt;- simEval(data.dir, niter, method=&quot;lasso&quot;, lasso.cv.lambda=&quot;lambda.min&quot;)</code></pre>
+<pre><code>Time difference of 3.161542 secs</code></pre>
+<pre class="r"><code>lasso.scores3</code></pre>
+<pre><code>                ap                 ar                shd 
+&quot;0.65023 (0.2726)&quot; &quot;0.70744 (0.3019)&quot;      &quot;5 (3.12694)&quot; </code></pre>
+<pre class="r"><code># evaluate lasso
+lasso.scores3.2 &lt;- simEval(data.dir, niter, method=&quot;lasso&quot;, lasso.cv.lambda=&quot;lambda.1se&quot;)</code></pre>
+<pre><code>Time difference of 3.066147 secs</code></pre>
+<pre class="r"><code>lasso.scores3.2</code></pre>
+<pre><code>                 ap                  ar                 shd 
+         &quot;NaN (NA)&quot; &quot;0.42725 (0.25134)&quot;     &quot;4.7 (2.31181)&quot; </code></pre>
+<pre class="r"><code># evaluate ckapc
+ckapc.scores3 &lt;- simEval(data.dir, niter, method=&quot;ckapc&quot;,
+                         ckapc.sigma=0.01, ckapc.theta=1, ckapc.alpha=0.01)</code></pre>
+<pre><code>Time difference of 5.122371 secs</code></pre>
+<pre class="r"><code>ckapc.scores3</code></pre>
+<pre><code>                 ap                  ar                 shd 
+ &quot;0.3587 (0.17658)&quot; &quot;0.58708 (0.29886)&quot;      &quot;11 (4.47214)&quot; </code></pre>
+</div>
+<div id="setting-4" class="section level2">
+<h2>3.4 Setting 4</h2>
+<pre class="r"><code>###===========  Setting 4  ===========###
+## data simulation
+data.dir &lt;- &quot;data/setting4/&quot;
+ifelse(!dir.exists(data.dir), dir.create(data.dir), FALSE)</code></pre>
+<pre><code>[1] FALSE</code></pre>
+<pre class="r"><code>niter &lt;- 10
+n &lt;- 1000
+p &lt;- 50
+k &lt;- 15
+pr.cont &lt;- 0.1
+degree &lt;- 4
+seed &lt;- 99
+rand.mean &lt;- FALSE
+# simulate data
+setting.simulate(data.dir, niter, n, p, k, pr.cont, degree, seed, rand.mean)
+# evaluate bnlearn
+bnl.scores4 &lt;- simEval(data.dir, niter, method=&quot;hc-bic&quot;)</code></pre>
+<pre><code>Time difference of 1.143631 secs</code></pre>
+<pre class="r"><code>bnl.scores4</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.93391 (0.03114)&quot; &quot;0.54695 (0.05197)&quot;    &quot;40.7 (5.12185)&quot; </code></pre>
+<pre class="r"><code># evaluate glmtlp.min
+tlp.scores4 &lt;- simEval(data.dir, niter, method=&quot;glmtlp&quot;, tlp.cv.lambda=&quot;lambda.min&quot;)</code></pre>
+<pre><code>Time difference of 4.49064 mins</code></pre>
+<pre class="r"><code>tlp.scores4</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.58408 (0.09766)&quot; &quot;0.71982 (0.05065)&quot;   &quot;67.2 (17.69997)&quot; </code></pre>
+<pre class="r"><code># evaluate glmtlp.1se
+tlp.scores4.2 &lt;- simEval(data.dir, niter, method=&quot;glmtlp&quot;, tlp.cv.lambda=&quot;lambda.1se&quot;)</code></pre>
+<pre><code>Time difference of 4.519476 mins</code></pre>
+<pre class="r"><code>tlp.scores4.2</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.77687 (0.06874)&quot; &quot;0.62123 (0.05163)&quot;    &quot;46.3 (6.16532)&quot; </code></pre>
+<pre class="r"><code># evaluate lasso.min
+lasso.scores4 &lt;- simEval(data.dir, niter, method=&quot;lasso&quot;, lasso.cv.lambda=&quot;lambda.min&quot;)</code></pre>
+<pre><code>Time difference of 13.19415 secs</code></pre>
+<pre class="r"><code>lasso.scores4</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.32847 (0.04544)&quot; &quot;0.79297 (0.07023)&quot;  &quot;152.4 (19.35172)&quot; </code></pre>
+<pre class="r"><code># evaluate lasso
+lasso.scores4.2 &lt;- simEval(data.dir, niter, method=&quot;lasso&quot;, lasso.cv.lambda=&quot;lambda.1se&quot;)</code></pre>
+<pre><code>Time difference of 13.72271 secs</code></pre>
+<pre class="r"><code>lasso.scores4.2</code></pre>
+<pre><code>                 ap                  ar                 shd 
+ &quot;0.8978 (0.02027)&quot; &quot;0.58356 (0.06921)&quot;      &quot;40 (6.41179)&quot; </code></pre>
+<!-- ```{r setting4-ckapc} -->
+<!-- # evaluate ckapc -->
+<!-- ckapc.scores4 <- simEval(data.dir, niter, method="ckapc",  -->
+<!--                          ckapc.sigma=0.01, ckapc.theta=1, ckapc.alpha=0.01) -->
+<!-- ckapc.scores4 -->
+<!-- ``` -->
+</div>
+<div id="setting-5" class="section level2">
+<h2>3.5 Setting 5</h2>
+<pre class="r"><code>###===========  Setting 5  ===========###
+## data simulation
+data.dir &lt;- &quot;data/setting5/&quot;
+ifelse(!dir.exists(data.dir), dir.create(data.dir), FALSE)</code></pre>
+<pre><code>[1] FALSE</code></pre>
+<pre class="r"><code>niter &lt;- 10
+n &lt;- 1000
+p &lt;- 50
+k &lt;- 15
+pr.cont &lt;- 0.2
+degree &lt;- 4
+seed &lt;- 99
+rand.mean &lt;- FALSE
+# simulate data
+setting.simulate(data.dir, niter, n, p, k, pr.cont, degree, seed, rand.mean)
+# evaluate bnlearn
+bnl.scores5 &lt;- simEval(data.dir, niter, method=&quot;hc-bic&quot;)</code></pre>
+<pre><code>Time difference of 1.228364 secs</code></pre>
+<pre class="r"><code>bnl.scores5</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.95345 (0.03236)&quot; &quot;0.55553 (0.06437)&quot;      &quot;39 (6.14636)&quot; </code></pre>
+<pre class="r"><code># evaluate glmtlp.min
+tlp.scores5 &lt;- simEval(data.dir, niter, method=&quot;glmtlp&quot;, tlp.cv.lambda=&quot;lambda.min&quot;)</code></pre>
+<pre><code>Time difference of 5.028426 mins</code></pre>
+<pre class="r"><code>tlp.scores5</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.60154 (0.09434)&quot; &quot;0.74552 (0.06042)&quot;   &quot;63.8 (15.24467)&quot; </code></pre>
+<pre class="r"><code># evaluate glmtlp.1se
+tlp.scores5.2 &lt;- simEval(data.dir, niter, method=&quot;glmtlp&quot;, tlp.cv.lambda=&quot;lambda.1se&quot;)</code></pre>
+<pre><code>Time difference of 5.064328 mins</code></pre>
+<pre class="r"><code>tlp.scores5.2</code></pre>
+<pre><code>                 ap                  ar                 shd 
+  &quot;0.8019 (0.0787)&quot; &quot;0.64772 (0.06166)&quot;      &quot;43 (8.90693)&quot; </code></pre>
+<pre class="r"><code># evaluate lasso.min
+lasso.scores5 &lt;- simEval(data.dir, niter, method=&quot;lasso&quot;, lasso.cv.lambda=&quot;lambda.min&quot;)</code></pre>
+<pre><code>Time difference of 17.5217 secs</code></pre>
+<pre class="r"><code>lasso.scores5</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.31026 (0.04338)&quot; &quot;0.83008 (0.05187)&quot;  &quot;168.3 (21.32317)&quot; </code></pre>
+<pre class="r"><code># evaluate lasso
+lasso.scores5.2 &lt;- simEval(data.dir, niter, method=&quot;lasso&quot;, lasso.cv.lambda=&quot;lambda.1se&quot;)</code></pre>
+<pre><code>Time difference of 18.04619 secs</code></pre>
+<pre class="r"><code>lasso.scores5.2</code></pre>
+<pre><code>                 ap                  ar                 shd 
+&quot;0.89821 (0.04508)&quot; &quot;0.61415 (0.07283)&quot;    &quot;37.9 (6.31489)&quot; </code></pre>
+<!-- ## 3.6 Setting 6 -->
+<!-- The statistics of this setting is very similar to the real data case. -->
+<!-- ```{r setting6} -->
+<!-- ###===========  Setting 6  ===========### -->
+<!-- ## data simulation -->
+<!-- data.dir <- "data/setting6/" -->
+<!-- ifelse(!dir.exists(data.dir), dir.create(data.dir), FALSE) -->
+<!-- niter <- 5 -->
+<!-- n <- 2000 -->
+<!-- p <- 500 -->
+<!-- k <- 115 -->
+<!-- pr.cont <- 0.1 -->
+<!-- degree <- 4 -->
+<!-- seed <- 99 -->
+<!-- rand.mean <- FALSE -->
+<!-- # simulate data -->
+<!-- setting.simulate(data.dir, niter, n, p, k, pr.cont, degree, seed, rand.mean) -->
+<!-- # evaluate bnlearn -->
+<!-- bnl.scores4 <- simEval(data.dir, niter, method="hc-bic") -->
+<!-- bnl.scores4 -->
+<!-- # evaluate glmtlp.min -->
+<!-- tlp.scores4 <- simEval(data.dir, niter, method="glmtlp", tlp.cv.lambda="lambda.min") -->
+<!-- tlp.scores4 -->
+<!-- # evaluate glmtlp.1se -->
+<!-- tlp.scores4.2 <- simEval(data.dir, niter, method="glmtlp", tlp.cv.lambda="lambda.1se") -->
+<!-- tlp.scores4.2 -->
+<!-- # evaluate lasso.min -->
+<!-- lasso.scores4 <- simEval(data.dir, niter, method="lasso", lasso.cv.lambda="lambda.min") -->
+<!-- lasso.scores4 -->
+<!-- # evaluate lasso -->
+<!-- lasso.scores4.2 <- simEval(data.dir, niter, method="lasso", lasso.cv.lambda="lambda.1se") -->
+<!-- lasso.scores4.2 -->
+<!-- ``` -->
 </div>
 </div>
 <div id="references" class="section level1">
