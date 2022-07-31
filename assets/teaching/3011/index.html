@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+
+  <title>UMN STAT 3011 | Introduction to Statistical Analysis</title>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+  <!-- Google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+
+  <!-- Google Analytics [#TODO may need to change to mine] -->
+  <!-- <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-60458624-1', 'auto');
+    ga('send', 'pageview');
+  </script> -->
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand brand" href="index.html">STAT3011 Home</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html#coursework">Coursework</a></li>
+        <li><a href="index.html#schedule">Schedule</a></li>
+        <li><a href="office_hours.html">Office Hours</a></li>
+        <li><a href="project.html">Practical projects</a></li>
+        <li><a href="">Canvas Forum</a></li>  
+         <!-- #TODO add canvas link -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<div id="header" style="text-align:center">
+  <h1>STAT 3011: Introduction to Statistical Analysis</h1>
+  <h3>UMN / Fall 2022</h3>
+  <div style="clear:both;"></div>
+</div>
+
+<!-- Intro -->
+<div class="container sec" id="intro">
+  <p>
+    Standard statistical reasoning. Simple statistical methods. Social/physical sciences. 
+    Mathematical reasoning behind facts in daily news. Basic computing environment.
+  </p>
+</div>
+
+<!-- Staff Info -->
+<div class="sechighlight">
+  <div class="container sec" id="people">
+    <!-- <div class="row"> -->
+    <div class="col-md-2">
+      <h3>Instructor</h3>
+      <div class="instructor">
+        <a href="http://umn.edu/home/yang6367">
+        <div class="instructorphoto"><img src="images/Yu_Yang.jpg"></div>
+        <div>Yu Yang</div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <h3>Teaching Assistants</h3>
+      <a href="">
+      <div class="instructor">
+        <div class="instructorphoto"><img src="images/smile.png"></div>
+        <div>None Listed</div>
+      </div>
+      </a>
+    </div>
+  </div>
+
+
+<!-- Logistics -->
+  <div class="container sec" id="logistics">
+    <h2>Logistics</h2>
+    <ul>
+      <li><b>Lectures:</b> are on Mon/Wed/Fri 8:00am-8:50am CDT in John T. Tate Hall 101. 
+      <li><b>Office hours</b>: Hybrid format with remote (over Zoom) or in person options. Information <a href="office_hours.html">here</a>.</li>
+      <li><b>Contact</b>: Students should ask <i>all</i> course-related questions in the Canvas forum, where you will also find announcements. 
+        For external enquiries, emergencies, or personal matters that you don't wish to put in a private post, you can email us at <i>yang6367@umn.edu</i>.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="container sec" id="content">
+  <h2>Content</h2>
+  <h3>What is this course about?</h3>
+  <p>
+    This is an introductory statistics course intended for undergraduate students. Topics include exploratory data analysis 
+    (graphs and simple summary statistics), inference using hypothesis tests and confidence intervals, simple linear regression, 
+    one-way ANOVA, and chi-squared tests for two- way tables. Emphasis will be placed on being able to use these tools with real data. 
+    Students are expected to be comfortable with computers as we will be using R on a regular basis.
+  </p>
+  <blockquote>
+    <small>
+      <i>“All models are wrong, but some are useful.”</i> – George E. P. Box
+    </small>
+  </blockquote>
+  <h3>Prerequisites</h3>
+  <ul>
+      <li><b>Interests in R and RStudio</b>
+          <p>All class assignments will be in R. If you need to remind yourself of R, or you're not very familiar with R, 
+            you can come to the R intro/review session in week 1 (listed in the <a href="#schedule">schedule</a>). </p>
+      </li>
+  </ul>
+  <h3>Reference Texts</h3>
+  <p>
+    The following texts are useful, but none are required.
+  </p>
+  <ul>
+      <li>
+          Alan Agresti, Christine Franklin, and Bernhard Klingenberg.
+          <a href="https://www.amazon.com/Statistics-Science-Learning-Books-Carte/dp/0133860825">Statistics: The Art and Science of Learning from Data (4th Edition)</a>
+    </li>
+      <li>
+          Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 
+          <a href="https://www.statlearning.com">An Introduction to Statistical Learning with Applications in R</a>
+      </li>
+      <li>
+        George Casella and Roger L. Berger. 
+        <a href="https://www.amazon.com/Statistical-Inference-George-Casella/dp/0534243126">Statistical Inference (2nd Edition)</a>
+    </li>
+    </ul>
+</div>
+
+<div class="container sec">
+    <h2>More details to be added later</h2>
+</div>
+
+<!-- Coursework -->
+<!-- Note the margin-top:-20px and the <br> serve to make the #coursework hyperlink display correctly (with the h2 header visible) -->
+<!-- <div class="sechighlight">
+<div class="container sec" id="coursework" style="margin-top:-20px">
+<br>
+<h2>Coursework</h2>
+  <h3>Assignments (25%)</h3>
+  <p>
+    There are ten weekly assignments, which will improve both your theoretical understanding and your practical skills. 
+    All assignments contain both written questions and programming parts. 
+  </p>
+  <ul>
+    <li><b>Credit</b>:
+      <ul>
+        <li>Assignment 1 (6%): Introduction to word vectors</li>
+        <li>Assignment 2 (12%): Derivatives and implementation of word2vec algorithm</li>
+        <li>Assignment 3 (12%): Dependency parsing and neural network foundations</li>
+        <li>Assignment 4 (12%): Neural Machine Translation with sequence-to-sequence, attention, and subwords</li>
+        <li>Assignment 5 (12%): Self-supervised learning and fine-tuning with Transformers</li>
+      </ul>
+    <li><b>Deadlines</b>: All assignments are due on either a Tuesday or a Thursday <i>before class</i> (i.e. before 3:15pm). All deadlines are listed in the <a href="#schedule">schedule</a>.</li>
+    <li><b>Submission</b>: Assignments are submitted via <a href="https://www.gradescope.com/courses/225374">Gradescope</a>. You will be able to access the course Gradescope page on Canvas. If you need to sign up for a Gradescope account, please use your <u>@stanford.edu</u> email address. Further instructions are given in each assignment handout.
+    <i>Do not email us your assignments</i>.</li>
+    <li><b>Late start</b>: If the result gives you a higher grade, we will not use your assignment 1 score, and we will give you an assignment grade based on counting each of assignments 2–5 at 13.5%.</li>
+    <li><b>Collaboration</b>:
+    Study groups are allowed, but students must understand and complete their own assignments, and hand in one assignment per student.
+    If you worked in a group, please put the names of the members of your study group at the top of your assignment.
+    Please ask if you have any questions about the collaboration policy.
+    </li>
+    <li><b>Honor Code</b>:
+    We expect students to not look at solutions or implementations online. Like all other classes at Stanford, we take the student <a href="https://ed.stanford.edu/academics/masters-handbook/honor-code">Honor Code</a> seriously. We sometimes use automated methods to detect overly similar assignment solutions.
+    </li>
+  </ul>
+
+  <h3>Practical Project (15%)</h3>
+    <p>
+      The Practical Project offers you the chance to apply your newly acquired skills towards an in-depth application.
+      You are encouraged to work on this assignment with other students in groups of up to four students. The practical assignment will 
+      be worth a total of 15%, and it will involve collecting data to answer a specific research question (to be decided on by the student). 
+      It will involve using R software to explore and analyze the data.
+    </p>
+    <h4>Important information</h4>
+    <ul>
+      <li><b>Credit</b>: The credit for the final project is broken down as follows:
+        <ul>
+          <li>
+            Project proposal (1.5%) [<a href="project/project-proposal-instructions-2022.pdf">instructions</a>]
+          </li>
+          <li>
+            Project milestone (1.5%) [<a href="project/project-milestone-instructions-2022.pdf">instructions</a>]
+          </li>
+          <li>
+            Project report (12%) [<a href="project/project-report-instructions-2022.pdf">instructions</a>]
+          </li>
+        </ul>
+      </li>
+      <li><b>Deadlines</b>: The project proposal, milestone and report are all due at 11:59pm. All deadlines are listed in the <a href="#schedule">schedule</a>.</li>
+      <li><b>Project advice</b> [<a href="slides/cs224n-2022-lecture08-final-project.pdf">lecture slides</a>] [<a href="project/custom-final-project-tips.pdf">custom project tips</a>]: The <i>Practical Tips for Final Projects</i> lecture provides guidance for choosing and planning your project.
+      To get project advice from staff members, first look at each staff member's areas of expertise on the <a href="office_hours.html#staff">office hours page</a>. This should help you find a staff member who is knowledgable about your project area.
+      </li>
+    </ul>
+    <h4>Practicalities</h4>
+    <ul>
+      <li><b>Team size</b>: Students may do final projects solo, or in teams of up to 3 people. We strongly recommend you do the final project in a team.  
+        Larger teams are expected to do correspondingly larger projects, and you should only form a 3-person team if you are planning to do an ambitious project 
+        where every team member will have a significant contribution.</li>
+      <li><b>Contribution</b>: In the final report we ask for a statement of what each team member contributed to the project. Team members will typically 
+        get the same grade, but we may differentiate in extreme cases of unequal contribution. You can contact us in confidence in the event of unequal contribution.</li>
+      <li><b>Using external resources</b>: The following guidelines apply to all projects (though the default project has some more specific rules, details TBA):
+        <ul>
+          <li>You can use any programming languages you like (R, Python, etc.)</li>
+          <li>More generally, you may use any existing code, libraries, etc. and consult any papers, books, online references, etc. for your project. 
+            However, you must cite your sources in your writeup and clearly indicate which parts of the project are your contribution and which parts were 
+            implemented by others.</li>
+          <li>Under no circumstances may you look at another STAT3011 group’s code, or incorporate their code into your project.</li>
+        </ul>
+      </li>
+    </ul>
+
+  <h3>Participation (0%)</h3>
+  <p>
+    We appreciate everyone being actively involved in the class! At the same time, participation is not counted in credits.
+  </p>
+
+  <h3>Late Days</h3>
+  <ul>
+    <li>Each student has 6 late days to use. A late day extends the deadline 24 hours. You can use up to 3 late days per assignment (including all five assignments, project proposal, project milestone and project final report).</li>
+    <li>Teams can <b>share</b> late days between members. For example, a group of three people must have at least six late days between them to extend the deadline by two days. <em>If any late days are being shared, this must be clearly marked at the beginning of the report, and fill out the form linked in <a href="https://edstem.org/us/courses/16260/discussion/1112679">this Ed post</a></em>.</li>
+    <li>Once you have used all 6 late days, the penalty is 1% off the final course grade for each additional late day.</li>
+  </ul>
+
+  <h3>Regrade Requests</h3>
+  <p>
+    If you feel you deserved a better grade on an assignment, you may submit a regrade request on Canvas within 3 days after the grades are released.
+    Your request should briefly summarize why you feel the original grade was unfair.
+    Your TA will reevaluate your assignment as soon as possible, and then issue a decision.
+    If you are still not happy, you can ask for your assignment to be regraded by an instructor.
+  </p>
+
+  <h3>Credit/No credit enrollment</h3>
+  <p>
+    If you take the class credit/no credit then you are graded in the same way as those registered for a letter grade. The only difference is that, 
+    providing you reach a C- standard in your work, it will simply be graded as CR.
+  </p>
+
+  <h3>All students welcome</h3>
+  <p>
+    We are committed to doing what we can to work for equity and to create an inclusive learning environment that actively values the diversity of 
+    backgrounds, identities, and experiences of everyone in CS224N. We also know that we will sometimes make missteps. If you notice some way that 
+    we could do better, we hope that you will let someone in the course staff know about it.
+  </p>
+
+  <h3>Well-Being and Mental Health</h3>
+  <p>
+    The last two years have been difficult for everyone. We’re here for you to try to help you get through a couple more quarters of the pandemic. 
+    If you are experiencing personal, academic, or relationship problems and would like to talk to someone with training and experience, reach out 
+    to the <a href="https://vaden.stanford.edu/caps-and-wellness">Counseling and Psychological Services (CAPS)</a> on campus. CAPS is the 
+    university’s counseling center dedicated to student mental health and wellbeing. Phone assessment appointments can be made at CAPS by 
+    calling 650-723-3785, or by accessing the VadenPatient portal through the Vaden website.
+  </p>
+
+  <h3>Auditing the course</h3>
+  <p>
+    In general we are happy to have auditors if they are a member of the Stanford community (registered student, official visitor, staff, or faculty). 
+    If you want to actually master the material of the class, we very strongly recommend that auditors do all the assignments. 
+    However, due to high enrollment, we cannot grade the work of any students who are not officially enrolled in the class.
+  </p>
+
+  <h3>Students with Documented Disabilities</h3>
+  <p>
+     We assume that all of us learn in different ways, and that the organization of the course must accommodate each student differently. We are committed to ensuring the full participation of all enrolled students in this class.
+     If you need an academic accommodation based on a disability, you should initiate the request with the <a href ="https://oae.stanford.edu/">Office of Accessible Education (OAE)</a>.
+     The OAE will evaluate the request, recommend accommodations, and prepare a letter for faculty. Students should contact the OAE as soon as possible and at any rate in advance of assignment deadlines, since timely notice is needed to coordinate accommodations. Students should also send your accommodation letter to either the staff mailing list (<i>cs224n-win2122-staff@lists.stanford.edu</i>) or make a private post on Ed, as soon as possible.
+  </p>
+
+  <h3>Sexual violence</h3>
+  <p>
+    Academic accommodations are available for students who have experienced or are recovering from sexual violence. If you would like to talk to a confidential resource, you can schedule a meeting with the Confidential Support Team or call their 24/7 hotline at: 650-725-9955. Counseling and Psychological Services also offers confidential counseling services. Non-confidential resources include the Title IX Office, for investigation and accommodations, and the SARA Office, for healing programs. Students can also speak directly with the teaching staff to arrange accommodations. Note that university employees – including professors and TAs – are required to report what they know about incidents of sexual or relationship violence, stalking and sexual harassment to the Title IX Office. Students can learn more at <a href="are recovering from">https://vaden.stanford.edu/sexual-assault</a>.
+  </p>
+</div>
+</div> -->
+
+
+<!-- Schedule -->
+<!-- Note the margin-top:-20px and the <br> serve to make the #schedule hyperlink display correctly (with the h2 header visible) -->
+<!-- <div class="container sec" id="schedule" style="margin-top:-20px">
+<br>
+<h2>Schedule</h2>
+<p>
+  Updated lecture <b>slides</b> will be posted here shortly before each lecture. Other links contain last year's slides, which are mostly similar.
+</p>
+<p>
+  Lecture <b>notes</b> will be uploaded a few days after most lectures. The notes (which cover approximately the first half of the course content) give supplementary detail beyond the lectures.
+</p>
+<table class="table">
+  <colgroup>
+    <col style="width:10%">
+    <col style="width:20%">
+    <col style="width:40%">
+    <col style="width:10%">
+    <col style="width:10%">
+  </colgroup>
+  <thead>
+  <tr class="active">
+    <th>Date</th>
+    <th>Description</th>
+    <th>Course Materials</th>
+    <th>Events</th>
+    <th>Deadlines</th>
+  </tr>
+  </thead>
+  <tbody>
+
+    <tr class="warning">
+    <td>Tue Sep 6</td>
+    <td>Introduction to R and RStudio
+        <br>
+        [<a href="readings/cs224n-python-review.pdf">slides</a>]
+        [<a href="readings/python_tutorial.ipynb">notebook</a>]
+    </td>
+    <td>
+        <i class="fa fa-clock-o"></i> 1:30pm - 2:30pm<br>Remote (link on Canvas)
+    </td>
+    <td></td>
+    <td></td>
+    </tr>
+
+  <tr>
+    <td>Wed Sep 7</td>
+    <td>Overview/Introduction to the Course
+      <br>
+      [<a href="slides/cs224n-2022-lecture01-wordvecs1.pdf">slides</a>]
+      [<a href="readings/cs224n-2019-notes01-wordvecs1.pdf">notes</a>]
+      <br><br>
+      Gensim word vectors example:
+      <br>
+      [<a href="materials/Gensim.zip">code</a>]
+      [<a href="materials/Gensim%20word%20vector%20visualization.html">preview</a>]
+    </td>
+    <td>
+      Suggested Readings:
+      <ol>
+        <li><a href="http://arxiv.org/pdf/1301.3781.pdf">Efficient Estimation of Word Representations in Vector Space</a> (original word2vec paper)</li>
+        <li><a href="http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">Distributed Representations of Words and Phrases and their Compositionality</a> (negative sampling paper)</li>
+      </ol>
+    </td>
+    <td>
+      Assignment 1 <b><font color="green">out</font></b>
+      <br>
+      [<a href="assignments/a1.zip">code</a>]
+      <br>
+      [<a href="assignments/a1_preview/exploring_word_vectors.html">preview</a>]
+    </td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>Fri Sep 9</td>
+    <td>Word Vectors 2 and Word Window Classification
+      <br>
+      [<a href="slides/cs224n-2022-lecture02-wordvecs2.pdf">slides</a>]
+      [<a href="readings/cs224n-2019-notes02-wordvecs2.pdf">notes</a>]
+    </td>
+    <td>
+      Suggested Readings:
+      <ol>
+        <li><a href="http://nlp.stanford.edu/pubs/glove.pdf">GloVe: Global Vectors for Word Representation</a> (original GloVe paper)</li>
+        <li><a href="http://www.aclweb.org/anthology/Q15-1016">Improving Distributional Similarity with Lessons Learned from Word Embeddings</a></li>
+        <li><a href="http://www.aclweb.org/anthology/D15-1036">Evaluation methods for unsupervised word embeddings</a></li>
+      </ol>
+      Additional Readings:
+      <ol>
+        <li><a href="http://aclweb.org/anthology/Q16-1028">A Latent Variable Model Approach to PMI-based Word Embeddings</a></li>
+        <li><a href="https://transacl.org/ojs/index.php/tacl/article/viewFile/1346/320">Linear Algebraic Structure of Word Senses, with Applications to Polysemy</a></li>
+        <li><a href="https://papers.nips.cc/paper/7368-on-the-dimensionality-of-word-embedding.pdf">On the Dimensionality of Word Embedding</a></li>
+      </ol>
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>Mon Sep 12</td>
+    <td>Word Vectors 2 and Word Window Classification
+      <br>
+      [<a href="slides/cs224n-2022-lecture02-wordvecs2.pdf">slides</a>]
+      [<a href="readings/cs224n-2019-notes02-wordvecs2.pdf">notes</a>]
+    </td>
+    <td>
+      Suggested Readings:
+      <ol>
+        <li><a href="http://nlp.stanford.edu/pubs/glove.pdf">GloVe: Global Vectors for Word Representation</a> (original GloVe paper)</li>
+        <li><a href="http://www.aclweb.org/anthology/Q15-1016">Improving Distributional Similarity with Lessons Learned from Word Embeddings</a></li>
+        <li><a href="http://www.aclweb.org/anthology/D15-1036">Evaluation methods for unsupervised word embeddings</a></li>
+      </ol>
+      Additional Readings:
+      <ol>
+        <li><a href="http://aclweb.org/anthology/Q16-1028">A Latent Variable Model Approach to PMI-based Word Embeddings</a></li>
+        <li><a href="https://transacl.org/ojs/index.php/tacl/article/viewFile/1346/320">Linear Algebraic Structure of Word Senses, with Applications to Polysemy</a></li>
+        <li><a href="https://papers.nips.cc/paper/7368-on-the-dimensionality-of-word-embedding.pdf">On the Dimensionality of Word Embedding</a></li>
+      </ol>
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+
+  <tr class="warning">
+    <td>Tue Sep 13</td>
+    <td>Introduction to R and RStudio
+        <br>
+        [<a href="readings/cs224n-python-review.pdf">slides</a>]
+        [<a href="readings/python_tutorial.ipynb">notebook</a>]
+    </td>
+    <td>
+        <i class="fa fa-clock-o"></i> 1:30pm - 2:30pm<br>Remote (link on Canvas)
+    </td>
+    <td></td>
+    <td></td>
+    </tr>
+
+  <tr>
+    <td>Wed Sep 14</td>
+    <td>Backprop and Neural Networks
+      <br>
+      [<a href="slides/cs224n-2022-lecture03-neuralnets.pdf">slides</a>]
+      [<a href="readings/cs224n-2019-notes03-neuralnets.pdf">notes</a>]
+    </td>
+    <td>
+      Suggested Readings:
+      <ol>
+        <li><a href="readings/gradient-notes.pdf">matrix calculus notes</a></li>
+        <li><a href="readings/review-differential-calculus.pdf">Review of differential calculus</a></li>
+        <li><a href="http://cs231n.github.io/neural-networks-1/">CS231n notes on network architectures</a></li>
+        <li><a href="http://cs231n.github.io/optimization-2/">CS231n notes on backprop</a></li>
+        <li><a href="http://cs231n.stanford.edu/handouts/derivatives.pdf">Derivatives, Backpropagation, and Vectorization</a></li>
+        <li><a href="http://www.iro.umontreal.ca/~vincentp/ift3395/lectures/backprop_old.pdf">Learning Representations by Backpropagating Errors</a> (seminal Rumelhart et al. backpropagation paper)</li>
+      </ol>
+      Additional Readings:
+      <ol>
+        <li><a href="https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b">Yes you should understand backprop</a></li>
+        <li><a href="http://www.jmlr.org/papers/volume12/collobert11a/collobert11a.pdf">Natural Language Processing (Almost) from Scratch</a></li>
+      </ol>
+    </td>
+    <td>
+      Assignment 2 <b><font color="green">out</font></b>
+      <br>
+      [<a href="assignments/a2.zip">code</a>]<br>
+      [<a href="assignments/a2.pdf">handout</a>]<br>
+      [<a href="assignments/a2_latex_template.zip">latex template</a>]
+    </td>
+    <td>Assignment 1 <b><font color="red">due</font></b></td>
+  </tr>
+
+
+  </tbody>
+</table>
+</div> -->
+
+<!-- jQuery and Bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
