@@ -1,271 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yu Yang's Home Page</title>
-    <!-- get the fonts in Google font: Caveat and Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <main>
-      <!-- ***********************  ABOUT / PROFILE  *********************** -->
-      <header>
-        <div class="nav-bar">
-          <a class="button" href="index.html" target="_self">HOME</a>
-          <a class="button" href="https://yuyangyy.com/blog" target="_self">BLOG</a>
-          <a class="button" href="https://yuyangyy.com/researchlog" target="_self">RESEARCH LOG</a>
-          <a class="button" href="assets/cv/CV_YuYang.pdf" target="_self">CV</a>
-          <a class="button" href="https://yuyangyy.com/glmtlp/" target="_self">PACKAGE</a>
-          <a class="button" href="https://yuyangyy.com/stat3011/" target="_self">TEACHING</a>
 
-          <div class="dropdown">
-            <a class="button">COURSES</a>
-            <div class="dropdown-content">
-              <a href="assets/courses/8051.html">STAT 8051</a>
-              <a href="assets/courses/8052.html">STAT 8052</a>
-              <a href="assets/courses/8111-8112.html">STAT 8111/2</a>
-              <a href="assets/courses/8521.html">IE 8521</a>
-              <a href="assets/courses/8054.html">STAT 8054</a>
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yu Yang's Home Page</title>
+  <!-- get the fonts in Google font: Caveat and Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <main>
+    <!-- ***********************  ABOUT / PROFILE  *********************** -->
+    <header>
+      <div class="nav-bar">
+        <a class="button" href="index.html" target="_self">HOME</a>
+        <a class="button" href="https://yuyangyy.com/blog" target="_self">BLOG</a>
+        <a class="button" href="https://yuyangyy.com/researchlog" target="_self">RESEARCH LOG</a>
+        <a class="button" href="assets/cv/CV_YuYang.pdf" target="_self">CV</a>
+        <a class="button" href="https://yuyangyy.com/glmtlp/" target="_self">PACKAGE</a>
+        <a class="button" href="https://yuyangyy.com/stat3011/" target="_self">TEACHING</a>
+
+        <div class="dropdown">
+          <a class="button">COURSES</a>
+          <div class="dropdown-content">
+            <a href="assets/courses/8051.html">STAT 8051</a>
+            <a href="assets/courses/8052.html">STAT 8052</a>
+            <a href="assets/courses/8111-8112.html">STAT 8111/2</a>
+            <a href="assets/courses/8521.html">IE 8521</a>
+            <a href="assets/courses/8054.html">STAT 8054</a>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="content-wrap">
+        <h1>Yu Yang</h1>
+        <h2>Ph.D. in Statistics</h2>
+
+        <p>I am a Ph.D. in Statistics. I am always hungry to learn. I am interested in natural language processing and
+          causal discovery.</p>
+        <p>My motto is: <i>Respect Life!</i> </p>
+      </div>
+
+    </header>
+
+    <!-- ********************  PROJECTS / PORTFOLIO  ********************* -->
+    <section class="projects">
+      <div class="content-wrap divider">
+        <h2>Featured Projects</h2>
+        <p>Here are some selected projects that I have done. More projects can be found at my
+          <a id="github" href="https://github.com/yuyangstatistics/projects">Github</a>.
+        </p>
+
+
+        <section class="project-item">
+          <div class="project-image">
+            <img src="assets/images/rbm_summarizer.png" alt="PGNet + Text RBM">
           </div>
 
+          <div class="project-details">
+            <h3>Topic-Aware Text Summarization</h3>
+            <p>This is a demo project to investigate the effectiveness of using text RBM to insert topic information to
+              summarization models.
+            </p>
+            <a class="button" href="https://github.com/yuyangstatistics/projects/tree/main/rbm_summarizer"
+              target="_self">Github repo</a>
+            <a class="button" href="assets/experiences/files/rbm_summarizer/report.pdf" target="_self">Final report</a>
+            <a class="button" href="assets/experiences/files/rbm_summarizer/slides.pdf" target="_self">Slides</a>
+          </div>
 
-        </div>
-        
-        <div class="content-wrap">
-          <h1>Yu Yang</h1>
-          <h2>Ph.D. candidate in Statistics</h2>
+        </section>
 
-          <p>I am a Ph.D. candidate in Statistics. I am always hungry to learn. I am interested in natural language processing and causal discovery.</p>
-          <p>My motto is: <i>Respect Life!</i> </p>
-        </div>
-        
-      </header>
+        <section class="project-item">
+          <div class="project-image">
+            <img src="assets/images/squad.png" alt="squad retro-reader">
+          </div>
 
-      <!-- ********************  PROJECTS / PORTFOLIO  ********************* -->
-      <section class="projects">
-        <div class="content-wrap divider">
-          <h2>Featured Projects</h2>
-          <p>Here are some selected projects that I have done. More projects can be found at my 
-            <a id="github" href="https://github.com/yuyangstatistics/projects">Github</a>.</p>
+          <div class="project-details">
+            <h3>Retro-BiDAF: A Retrospective Reader Over BiDAF</h3>
+            <p>For the SQuAD 2.0 Challenge, I combined the idea of retrospective reading and BiDAF and proposed the
+              Retro-BiDAF model,
+              which improved both the EM and F1 score in the non-PCE scenario.
+            </p>
+            <a class="button" href="https://github.com/yuyangstatistics/projects/tree/main/squad" target="_self">Github
+              repo</a>
+            <a class="button" href="assets/experiences/files/squad/retro-bidaf.pdf" target="_self">Final report</a>
+            <a class="button" href="assets/experiences/files/squad/slides.pdf" target="_self">Slides</a>
+          </div>
 
+        </section>
 
-          <section class="project-item">
-            <div class="project-image">
-              <img src="assets/images/rbm_summarizer.png" alt="PGNet + Text RBM">
-            </div>
+        <section class="project-item">
+          <div class="project-image">
+            <img src="assets/images/lyft.jpg" alt="lyft motion prediction">
+          </div>
 
-            <div class="project-details">
-              <h3>Topic-Aware Text Summarization</h3>
-              <p>This is a demo project to investigate the effectiveness of using text RBM to insert topic information to summarization models.
-              </p>
-              <a class="button" href="https://github.com/yuyangstatistics/projects/tree/main/rbm_summarizer" target="_self">Github repo</a>
-              <a class="button" href="assets/experiences/files/rbm_summarizer/report.pdf" target="_self">Final report</a>
-              <a class="button" href="assets/experiences/files/rbm_summarizer/slides.pdf" target="_self">Slides</a>
-            </div>
-            
-          </section>
+          <div class="project-details">
+            <h3>Kaggle: Lyft Motion Prediction for Autonomous Vehicles</h3>
+            <p>This Kaggle competition was supported by Lyft and the goal was to build a motion prediction model for
+              self-driving vehicles.
+              We built an ensembled model with ResNet, DenseNet, and EfficientNet, and ranked <a
+                href="https://www.kaggle.com/yuyangstat" target="_self"><b>top 6%</b></a> in the end.</p>
+            <a class="button" href="https://github.com/yuyangstatistics/projects/tree/main/lyft" target="_self">Github
+              repo</a>
+          </div>
 
-          <section class="project-item">
-            <div class="project-image">
-              <img src="assets/images/squad.png" alt="squad retro-reader">
-            </div>
+        </section>
 
-            <div class="project-details">
-              <h3>Retro-BiDAF: A Retrospective Reader Over BiDAF</h3>
-              <p>For the SQuAD 2.0 Challenge, I combined the idea of retrospective reading and BiDAF and proposed the Retro-BiDAF model, 
-                which improved both the EM and F1 score in the non-PCE scenario. 
-              </p>
-              <a class="button" href="https://github.com/yuyangstatistics/projects/tree/main/squad" target="_self">Github repo</a>
-              <a class="button" href="assets/experiences/files/squad/retro-bidaf.pdf" target="_self">Final report</a>
-              <a class="button" href="assets/experiences/files/squad/slides.pdf" target="_self">Slides</a>
-            </div>
-            
-          </section>
-          
-          <section class="project-item">
-            <div class="project-image">
-              <img src="assets/images/lyft.jpg" alt="lyft motion prediction">
-            </div>
-            
-            <div class="project-details">
-              <h3>Kaggle: Lyft Motion Prediction for Autonomous Vehicles</h3>
-              <p>This Kaggle competition was supported by Lyft and the goal was to build a motion prediction model for self-driving vehicles.
-                We built an ensembled model with ResNet, DenseNet, and EfficientNet, and ranked <a href="https://www.kaggle.com/yuyangstat" target="_self"><b>top 6%</b></a> in the end.</p>
-              <a class="button" href="https://github.com/yuyangstatistics/projects/tree/main/lyft" target="_self">Github repo</a>
-            </div>
-            
-          </section>
-        
-          <section class="project-item">
-            <div class="project-image">
-              <img src="assets/images/Wells_Fargo_2020.jpg" alt="wells fargo grand prize winner">
-            </div>
-            
-            <div class="project-details">
-              <h3>Wells Fargo Campus Analytics Challenge 2020</h3>
-              <p>This challenge was a binary classification problem. Our shiny point was the proposal of a novel 
-                method called <i>Sparse Grouping Pursuit</i> to discover the sparseness and grouping structure among features, which 
-                led to a tremendous dimension reduction. Our solution was selected as one of the <b>Grand Prize </b> Winners of the year.</p>
-              <a class="button" href="https://github.com/yuyangstatistics/projects/tree/main/wellsfargo" target="_self">Github repo</a>
-              <a class="button" href="assets/experiences/files/wellsfargo/wellsfargo.pdf" target="_self">Final report</a>
-            </div>
-            
-          </section>
+        <section class="project-item">
+          <div class="project-image">
+            <img src="assets/images/Wells_Fargo_2020.jpg" alt="wells fargo grand prize winner">
+          </div>
 
-          <!-- Copy the whole <section> block to add more projects. -->
-          <section class="project-item">
-            <div class="project-image">
-              <img src="assets/images/minnemudac.png" alt="minnemudac analytic acumen award">
-            </div>
-            
-            <div class="project-details">
-              <h3>MinneMUDAC 2019 Student Data Science Challenge</h3>
-              <p>The objective of this challenge was to predict soybean price in the commodity market. Our work was highly regarded by the judges in 
-                both academia and industry. And we won the <b>Analytic Acumen Award</b> in the end. </p>
-              <a class="button" href="https://github.com/yuyangstatistics/projects/tree/main/MinneMUDAC" target="_self">Github repo</a>
-              <a class="button" href="https://yuyangyy.com/blog/posts/MinneMUDAC/" target="_self">Blog post</a>
-              <a class="button" href="assets/experiences/minnemudac2019.html" target="_self">More about the project</a>
-            </div>
-            
-          </section>
-          <!-- End of Project block. -->
+          <div class="project-details">
+            <h3>Wells Fargo Campus Analytics Challenge 2020</h3>
+            <p>This challenge was a binary classification problem. Our shiny point was the proposal of a novel
+              method called <i>Sparse Grouping Pursuit</i> to discover the sparseness and grouping structure among
+              features, which
+              led to a tremendous dimension reduction. Our solution was selected as one of the <b>Grand Prize </b>
+              Winners of the year.</p>
+            <a class="button" href="https://github.com/yuyangstatistics/projects/tree/main/wellsfargo"
+              target="_self">Github repo</a>
+            <a class="button" href="assets/experiences/files/wellsfargo/wellsfargo.pdf" target="_self">Final report</a>
+          </div>
 
-          <section class="project-item">
-            <div class="project-image">
-              <img src="assets/images/kaggle.png" alt="Kaggle competition">
-            </div>
-            
-            <div class="project-details">
-              <h3>Kaggle: Travelers Claim Fraud Detection</h3>
-              <p>This was an in-class project supported by Travelers. The goal was to detect claim fraud. Our team won <a href="https://www.kaggle.com/yuyangyy" target="_self"><b>2nd place</b></a>.</p>
-              <a class="button" href="https://github.com/yuyangstatistics/projects/tree/main/Kaggle_Travelers" target="_self">Github repo</a>
-              <a class="button" href="https://yuyangyy.com/blog/posts/Kaggle-Competition-Travelers-Fraud-Detection/" target="_self">Blog post</a>
-            </div>
-            
-          </section>
+        </section>
 
-        </div>
-      </section>
+        <!-- Copy the whole <section> block to add more projects. -->
+        <section class="project-item">
+          <div class="project-image">
+            <img src="assets/images/minnemudac.png" alt="minnemudac analytic acumen award">
+          </div>
 
-      <!-- ***********************  WORK EXPERIENCE  *********************** -->
-      <section class="work-experience">
-        <div class="content-wrap item-details divider">
-          <h2>Experience</h2>
-          
-          <section class="job-item">
-            <div class="job-details">
-              <h3>Teaching Assistant</h3>
-              <p>University of Minnesota</p>
-              <p>Jan. 2022 - May 2023</p>
-            </div>
-            
-            <div class="job-summary">
-              <p>I am now a teaching assistant for the course STAT 3021H <i>Introduction to Probability and Statistics Honors</i>.
-              </p>
-            </div>
-            
-          </section>
+          <div class="project-details">
+            <h3>MinneMUDAC 2019 Student Data Science Challenge</h3>
+            <p>The objective of this challenge was to predict soybean price in the commodity market. Our work was highly
+              regarded by the judges in
+              both academia and industry. And we won the <b>Analytic Acumen Award</b> in the end. </p>
+            <a class="button" href="https://github.com/yuyangstatistics/projects/tree/main/MinneMUDAC"
+              target="_self">Github repo</a>
+            <a class="button" href="https://yuyangyy.com/blog/posts/MinneMUDAC/" target="_self">Blog post</a>
+            <a class="button" href="assets/experiences/minnemudac2019.html" target="_self">More about the project</a>
+          </div>
 
-          <section class="job-item">
-            <div class="job-details">
-              <h3>Graduate Instructor</h3>
-              <p>University of Minnesota</p>
-              <p>Sep. 2022 - Jan. 2023</p>
-            </div>
-            
-            <div class="job-summary">
-              <p>I have worked as a graduate instructor for the course <i>STAT 3011 Introduction to Statistical Analysis</i>.
-              </p>
-            </div>
-            
-          </section>
+        </section>
+        <!-- End of Project block. -->
 
-          <section class="job-item">
-            <div class="job-details">
-              <h3>AI & Data Science Summer Associate</h3>
-              <p>JPMorgan Chase & Co.</p>
-              <p>Jun. 2022 - Sep. 2022</p>
-            </div>
-            
-            <div class="job-summary">
-              <p>I have worked as an intern on machine learning projects.
-              </p>
-            </div>
-            
-          </section>
+        <section class="project-item">
+          <div class="project-image">
+            <img src="assets/images/kaggle.png" alt="Kaggle competition">
+          </div>
 
-          <section class="job-item">
-            <div class="job-details">
-              <h3>Research Assistant</h3>
-              <p>Seagate Technology</p>
-              <p>Sep. 2019 - Apr. 2022</p>
-            </div>
-            
-            <div class="job-summary">
-              <p>I have worked as a research assistant on projects collaborating with <i>Seagate Technology</i>.
-              </p>
-            </div>
-            
-          </section>
+          <div class="project-details">
+            <h3>Kaggle: Travelers Claim Fraud Detection</h3>
+            <p>This was an in-class project supported by Travelers. The goal was to detect claim fraud. Our team won <a
+                href="https://www.kaggle.com/yuyangyy" target="_self"><b>2nd place</b></a>.</p>
+            <a class="button" href="https://github.com/yuyangstatistics/projects/tree/main/Kaggle_Travelers"
+              target="_self">Github repo</a>
+            <a class="button" href="https://yuyangyy.com/blog/posts/Kaggle-Competition-Travelers-Fraud-Detection/"
+              target="_self">Blog post</a>
+          </div>
 
-          <!-- Copy this whole <section> block to add more jobs. -->
-          <section class="job-item">
-            <div class="job-details">
-              <h3>Teaching Assistant</h3>
-              <p>University of Minnesota</p>
-              <p>Sep. 2018 - May 2019</p>
-            </div>
-            
-            <div class="job-summary">
-              <p>I have worked as a teaching assistant for the course <i>STAT 3011 Introduction to Statistical Analysis</i> for two semesters.</p>
-            </div>
-            
-          </section>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- ***********************  WORK EXPERIENCE  *********************** -->
+    <section class="work-experience">
+      <div class="content-wrap item-details divider">
+        <h2>Experience</h2>
+
+        <section class="job-item">
+          <div class="job-details">
+            <h3>Applied AI ML Associate Sr</h3>
+            <p>JPMorgan Chase & Co.</p>
+            <p>Jun. 2023 - present</p>
+          </div>
+
+          <div class="job-summary">
+            <p>I am now working as an AI & ML research scientist at <i>Machine Learning Center Of Excellence</i>.
+            </p>
+          </div>
+
+        </section>
+
+        <section class="job-item">
+          <div class="job-details">
+            <h3>Teaching Assistant</h3>
+            <p>University of Minnesota</p>
+            <p>Jan. 2022 - May 2023</p>
+          </div>
+
+          <div class="job-summary">
+            <p>I have worked as a teaching assistant for the course STAT 3021H <i>Introduction to Probability and
+                Statistics
+                Honors</i>.
+            </p>
+          </div>
+
+        </section>
+
+        <section class="job-item">
+          <div class="job-details">
+            <h3>Graduate Instructor</h3>
+            <p>University of Minnesota</p>
+            <p>Sep. 2022 - Jan. 2023</p>
+          </div>
+
+          <div class="job-summary">
+            <p>I have worked as a graduate instructor for the course <i>STAT 3011 Introduction to Statistical
+                Analysis</i>.
+            </p>
+          </div>
+
+        </section>
+
+        <section class="job-item">
+          <div class="job-details">
+            <h3>AI & Data Science Summer Associate</h3>
+            <p>JPMorgan Chase & Co.</p>
+            <p>Jun. 2022 - Sep. 2022</p>
+          </div>
+
+          <div class="job-summary">
+            <p>I have worked as an intern on machine learning projects.
+            </p>
+          </div>
+
+        </section>
+
+        <section class="job-item">
+          <div class="job-details">
+            <h3>Research Assistant</h3>
+            <p>Seagate Technology</p>
+            <p>Sep. 2019 - Apr. 2022</p>
+          </div>
+
+          <div class="job-summary">
+            <p>I have worked as a research assistant on projects collaborating with <i>Seagate Technology</i>.
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Copy this whole <section> block to add more jobs. -->
+        <section class="job-item">
+          <div class="job-details">
+            <h3>Teaching Assistant</h3>
+            <p>University of Minnesota</p>
+            <p>Sep. 2018 - May 2019</p>
+          </div>
+
+          <div class="job-summary">
+            <p>I have worked as a teaching assistant for the course <i>STAT 3011 Introduction to Statistical
+                Analysis</i> for two semesters.</p>
+          </div>
+
+        </section>
         <!-- End of Job block. -->
-          
-          
-        </div>
-      </section>
 
-      <!-- ******************  EDUCATION & CERTIFICATIONS ****************** -->
-      <section class="education">
-        <div class="content-wrap item-details">
-          <h2>Education</h2>
 
-          <!-- Copy this whole <section> block to add more schools. -->
-          <section>
-            <h3>University of Minnesota - Minneapolis, USA</h3>
-            <p>Ph.D. in Statistics, 2018 - present</p>
-            <p>I am now working on Natural Language Processing.</p>
-          </section>
-          <!-- End of School block. -->
+      </div>
+    </section>
 
-          <section>
-            <h3>Shanghai University of Finance and Economics - Shanghai, China</h3>
-            <p>B.S. in Statistics, 2014 - 2018</p>
-            <p>I had a great time during my undergraduate. I played softball in the college and I miss my teammates and the training time on the fields so much!</p>
-          </section>
-        </div>
-      </section>
+    <!-- ******************  EDUCATION & CERTIFICATIONS ****************** -->
+    <section class="education">
+      <div class="content-wrap item-details">
+        <h2>Education</h2>
 
-      <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
-      <footer>
-        <div class="content-wrap">
-          <h2>Let's Keep in Touch!</h2>
+        <!-- Copy this whole <section> block to add more schools. -->
+        <section>
+          <h3>University of Minnesota - Minneapolis, USA</h3>
+          <p>Ph.D. in Statistics, 2018 - June 2023</p>
+          <p>My research focuses on text summarization and causal discovery.</p>
+        </section>
+        <!-- End of School block. -->
 
-          <!-- Social media and contact links. Add or remove any networks. -->
-          <ul class="contact-list">
-            <li><a href="mailto:yang6367@umn.edu">Email</a></li>
-            <li><a href="https://github.com/yuyangstatistics/" target="_self">Github</a></li>
-            <li><a href="https://twitter.com/yuyangstat" target="_self">Twitter</a></li>
-            <li><a href="https://www.linkedin.com/in/yuyangstat/" target="_self">LinkedIn</a></li>
-            <li><a href="https://www.facebook.com/yy.yuyang" target="_self">Facebook</a></li>
-          </ul>
-        </div>
-      </footer>
-    </main>
-  </body>
+        <section>
+          <h3>Shanghai University of Finance and Economics - Shanghai, China</h3>
+          <p>B.S. in Statistics, 2014 - 2018</p>
+          <p>I had a great time during my undergraduate. I played softball in the college and I miss my teammates and
+            the training time on the fields so much!</p>
+        </section>
+      </div>
+    </section>
+
+    <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
+    <footer>
+      <div class="content-wrap">
+        <h2>Let's Keep in Touch!</h2>
+
+        <!-- Social media and contact links. Add or remove any networks. -->
+        <ul class="contact-list">
+          <li><a href="mailto:yang6367@umn.edu">Email</a></li>
+          <li><a href="https://github.com/yuyangstatistics/" target="_self">Github</a></li>
+          <li><a href="https://twitter.com/yuyangstat" target="_self">Twitter</a></li>
+          <li><a href="https://www.linkedin.com/in/yuyangstat/" target="_self">LinkedIn</a></li>
+          <li><a href="https://www.facebook.com/yy.yuyang" target="_self">Facebook</a></li>
+        </ul>
+      </div>
+    </footer>
+  </main>
+</body>
+
 </html>
